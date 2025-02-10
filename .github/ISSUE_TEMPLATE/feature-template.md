@@ -1,9 +1,9 @@
 ---
-name: 기능 구현 템플릿
+name: Feature Template
 about: 기능 요약, 완료 조건
 title: "[FEAT]"
 labels: "\U0001F916 기능"
-assignees: ''
+assignees: Cho-Hyun-Seung
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: 버그 템플릿
+name: Bug Template
 about: 버그 상황 및 예상 시간 작성
 title: "[BUG]"
 labels: ":lady_beetle:  버그"
