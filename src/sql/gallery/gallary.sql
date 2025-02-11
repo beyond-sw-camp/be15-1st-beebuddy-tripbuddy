@@ -1,4 +1,3 @@
--- [ 테스트용 / 수정 필요 ]
 -- 갤러리 사진/영상 목록 조회
 SELECT
     gal.file_id,
@@ -38,14 +37,14 @@ SELECT
     '새로운 파일 이름',
     '새로운 파일 경로',
     NOW (),
-    t.room_id,
-    m.member_id
+    trip.room_id,
+    mem.member_id
 FROM
-    tbl_trip t,
-    tbl_member m
+    tbl_trip trip,
+    tbl_member mem
 WHERE
-    t.room_id = 1
-    AND m.member_id = 2;
+    trip.room_id = 1
+    AND mem.member_id = 2;
 
 -- 갤러리 사진/영상 삭제
 UPDATE tbl_gallery
@@ -57,17 +56,17 @@ WHERE
 
 -- 갤러리 댓글 조회
 SELECT
-    comment_id,
-    comment_content,
-    created_at,
-    updated_at,
-    is_deleted,
-    file_id,
-    member_id
+    galc.comment_id,
+    galc.comment_content,
+    galc.created_at,
+    galc.updated_at,
+    galc.is_deleted,
+    galc.file_id,
+    galc.member_id
 FROM
-    tbl_photo_comment
+    tbl_photo_comment galc
 WHERE
-    file_id = 1;
+    galc.file_id = 1;
 
 -- 갤러리 댓글 등록
 INSERT INTO
@@ -82,14 +81,14 @@ SELECT
     '댓글 내용',
     NOW (),
     NOW (),
-    g.file_id,
-    m.member_id
+    gal.file_id,
+    mem.member_id
 FROM
-    tbl_gallery g,
-    tbl_member m
+    tbl_gallery gal,
+    tbl_member mem
 WHERE
-    g.file_id = 1
-    AND m.member_id = 1;
+    gal.file_id = 1
+    AND mem.member_id = 1;
 
 -- 갤러리 댓글 수정
 UPDATE tbl_photo_comment
