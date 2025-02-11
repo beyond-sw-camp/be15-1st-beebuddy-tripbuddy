@@ -11413,7 +11413,7 @@
 											"parentStyle": true,
 											"left": 411,
 											"top": 7057,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -11634,7 +11634,7 @@
 											"parentStyle": true,
 											"left": 875,
 											"top": 6625,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -11855,7 +11855,7 @@
 											"parentStyle": true,
 											"left": 1323,
 											"top": 6289,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -12076,7 +12076,7 @@
 											"parentStyle": true,
 											"left": 629,
 											"top": 6753,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -12297,7 +12297,7 @@
 											"parentStyle": true,
 											"left": 1013,
 											"top": 4687,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -12518,7 +12518,7 @@
 											"parentStyle": true,
 											"left": 117,
 											"top": 7279,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -15721,7 +15721,7 @@
 											"parentStyle": true,
 											"left": 1429,
 											"top": 8231,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -15942,7 +15942,7 @@
 											"parentStyle": true,
 											"left": 1397,
 											"top": 8151,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -16104,227 +16104,6 @@
 						},
 						{
 							"_type": "UMLUseCaseView",
-							"_id": "AAAAAAGU7l0ZpMJPuec=",
-							"_parent": {
-								"$ref": "AAAAAAGU6W6SsiABEeE="
-							},
-							"model": {
-								"$ref": "AAAAAAGU7j2MMMDoqj4="
-							},
-							"subViews": [
-								{
-									"_type": "UMLNameCompartmentView",
-									"_id": "AAAAAAGU7l0ZpMJQVJc=",
-									"_parent": {
-										"$ref": "AAAAAAGU7l0ZpMJPuec="
-									},
-									"model": {
-										"$ref": "AAAAAAGU7j2MMMDoqj4="
-									},
-									"subViews": [
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAGU7l0ZpMJRy14=",
-											"_parent": {
-												"$ref": "AAAAAAGU7l0ZpMJQVJc="
-											},
-											"visible": false,
-											"fillColor": "#DDFFEE",
-											"font": "Arial;13;0",
-											"parentStyle": true,
-											"left": 2165,
-											"top": 8231,
-											"height": 13
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAGU7l0ZpMJSnP0=",
-											"_parent": {
-												"$ref": "AAAAAAGU7l0ZpMJQVJc="
-											},
-											"fillColor": "#DDFFEE",
-											"font": "Arial;13;1",
-											"parentStyle": true,
-											"left": 2021.5,
-											"top": 5019,
-											"width": 81,
-											"height": 13,
-											"text": "파일 다운로드"
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAGU7l0ZpMJTUV4=",
-											"_parent": {
-												"$ref": "AAAAAAGU7l0ZpMJQVJc="
-											},
-											"visible": false,
-											"fillColor": "#DDFFEE",
-											"font": "Arial;13;0",
-											"parentStyle": true,
-											"left": 2165,
-											"top": 8231,
-											"width": 77.9365234375,
-											"height": 13,
-											"text": "(from 갤러리)"
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAGU7l0ZpMJUe70=",
-											"_parent": {
-												"$ref": "AAAAAAGU7l0ZpMJQVJc="
-											},
-											"visible": false,
-											"fillColor": "#DDFFEE",
-											"font": "Arial;13;0",
-											"parentStyle": true,
-											"left": 2165,
-											"top": 8231,
-											"height": 13,
-											"horizontalAlignment": 1
-										}
-									],
-									"fillColor": "#DDFFEE",
-									"font": "Arial;13;0",
-									"parentStyle": true,
-									"left": 2016.5,
-									"top": 5012,
-									"width": 91.61181640625,
-									"height": 25,
-									"stereotypeLabel": {
-										"$ref": "AAAAAAGU7l0ZpMJRy14="
-									},
-									"nameLabel": {
-										"$ref": "AAAAAAGU7l0ZpMJSnP0="
-									},
-									"namespaceLabel": {
-										"$ref": "AAAAAAGU7l0ZpMJTUV4="
-									},
-									"propertyLabel": {
-										"$ref": "AAAAAAGU7l0ZpMJUe70="
-									}
-								},
-								{
-									"_type": "UMLAttributeCompartmentView",
-									"_id": "AAAAAAGU7l0ZpMJV4x8=",
-									"_parent": {
-										"$ref": "AAAAAAGU7l0ZpMJPuec="
-									},
-									"model": {
-										"$ref": "AAAAAAGU7j2MMMDoqj4="
-									},
-									"visible": false,
-									"fillColor": "#DDFFEE",
-									"font": "Arial;13;0",
-									"parentStyle": true,
-									"left": 1869,
-									"top": 4567,
-									"width": 10,
-									"height": 10
-								},
-								{
-									"_type": "UMLOperationCompartmentView",
-									"_id": "AAAAAAGU7l0ZpMJW/k8=",
-									"_parent": {
-										"$ref": "AAAAAAGU7l0ZpMJPuec="
-									},
-									"model": {
-										"$ref": "AAAAAAGU7j2MMMDoqj4="
-									},
-									"visible": false,
-									"fillColor": "#DDFFEE",
-									"font": "Arial;13;0",
-									"parentStyle": true,
-									"left": 1869,
-									"top": 4567,
-									"width": 10,
-									"height": 10
-								},
-								{
-									"_type": "UMLReceptionCompartmentView",
-									"_id": "AAAAAAGU7l0ZpMJX5PE=",
-									"_parent": {
-										"$ref": "AAAAAAGU7l0ZpMJPuec="
-									},
-									"model": {
-										"$ref": "AAAAAAGU7j2MMMDoqj4="
-									},
-									"visible": false,
-									"fillColor": "#DDFFEE",
-									"font": "Arial;13;0",
-									"parentStyle": true,
-									"left": 1869,
-									"top": 4567,
-									"width": 10,
-									"height": 10
-								},
-								{
-									"_type": "UMLTemplateParameterCompartmentView",
-									"_id": "AAAAAAGU7l0ZpMJYwQI=",
-									"_parent": {
-										"$ref": "AAAAAAGU7l0ZpMJPuec="
-									},
-									"model": {
-										"$ref": "AAAAAAGU7j2MMMDoqj4="
-									},
-									"visible": false,
-									"fillColor": "#DDFFEE",
-									"font": "Arial;13;0",
-									"parentStyle": true,
-									"left": 1869,
-									"top": 4567,
-									"width": 10,
-									"height": 10
-								},
-								{
-									"_type": "UMLExtensionPointCompartmentView",
-									"_id": "AAAAAAGU7l0ZpMJZD3I=",
-									"_parent": {
-										"$ref": "AAAAAAGU7l0ZpMJPuec="
-									},
-									"model": {
-										"$ref": "AAAAAAGU7j2MMMDoqj4="
-									},
-									"visible": false,
-									"fillColor": "#DDFFEE",
-									"font": "Arial;13;0",
-									"parentStyle": true,
-									"left": 1869,
-									"top": 4567,
-									"width": 10,
-									"height": 10
-								}
-							],
-							"fillColor": "#DDFFEE",
-							"font": "Arial;13;0",
-							"parentStyle": false,
-							"containerChangeable": true,
-							"left": 1997,
-							"top": 5007,
-							"width": 130,
-							"height": 35,
-							"nameCompartment": {
-								"$ref": "AAAAAAGU7l0ZpMJQVJc="
-							},
-							"suppressAttributes": true,
-							"suppressOperations": true,
-							"attributeCompartment": {
-								"$ref": "AAAAAAGU7l0ZpMJV4x8="
-							},
-							"operationCompartment": {
-								"$ref": "AAAAAAGU7l0ZpMJW/k8="
-							},
-							"receptionCompartment": {
-								"$ref": "AAAAAAGU7l0ZpMJX5PE="
-							},
-							"templateParameterCompartment": {
-								"$ref": "AAAAAAGU7l0ZpMJYwQI="
-							},
-							"extensionPointCompartment": {
-								"$ref": "AAAAAAGU7l0ZpMJZD3I="
-							}
-						},
-						{
-							"_type": "UMLUseCaseView",
 							"_id": "AAAAAAGU7l0ZpMJaAeI=",
 							"_parent": {
 								"$ref": "AAAAAAGU6W6SsiABEeE="
@@ -16353,8 +16132,8 @@
 											"fillColor": "#DDFFEE",
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 2357,
-											"top": 8039,
+											"left": 2107,
+											"top": 8041,
 											"height": 13
 										},
 										{
@@ -16366,8 +16145,8 @@
 											"fillColor": "#DDFFEE",
 											"font": "Arial;13;1",
 											"parentStyle": true,
-											"left": 2157,
-											"top": 5019,
+											"left": 2032,
+											"top": 5020,
 											"width": 81,
 											"height": 13,
 											"text": "파일 삭제"
@@ -16382,9 +16161,9 @@
 											"fillColor": "#DDFFEE",
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 2357,
-											"top": 8039,
-											"width": 77.9365234375,
+											"left": 2107,
+											"top": 8041,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -16398,8 +16177,8 @@
 											"fillColor": "#DDFFEE",
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 2357,
-											"top": 8039,
+											"left": 2107,
+											"top": 8041,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
@@ -16407,8 +16186,8 @@
 									"fillColor": "#DDFFEE",
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 2152,
-									"top": 5012,
+									"left": 2027,
+									"top": 5013,
 									"width": 91,
 									"height": 25,
 									"stereotypeLabel": {
@@ -16437,8 +16216,8 @@
 									"fillColor": "#DDFFEE",
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 1965,
-									"top": 4471,
+									"left": 1840,
+									"top": 4472,
 									"width": 10,
 									"height": 10
 								},
@@ -16455,8 +16234,8 @@
 									"fillColor": "#DDFFEE",
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 1965,
-									"top": 4471,
+									"left": 1840,
+									"top": 4472,
 									"width": 10,
 									"height": 10
 								},
@@ -16473,8 +16252,8 @@
 									"fillColor": "#DDFFEE",
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 1965,
-									"top": 4471,
+									"left": 1840,
+									"top": 4472,
 									"width": 10,
 									"height": 10
 								},
@@ -16491,8 +16270,8 @@
 									"fillColor": "#DDFFEE",
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 1965,
-									"top": 4471,
+									"left": 1840,
+									"top": 4472,
 									"width": 10,
 									"height": 10
 								},
@@ -16509,8 +16288,8 @@
 									"fillColor": "#DDFFEE",
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 1965,
-									"top": 4471,
+									"left": 1840,
+									"top": 4472,
 									"width": 10,
 									"height": 10
 								}
@@ -16519,8 +16298,8 @@
 							"font": "Arial;13;0",
 							"parentStyle": false,
 							"containerChangeable": true,
-							"left": 2133,
-							"top": 5007,
+							"left": 2008,
+							"top": 5008,
 							"width": 129,
 							"height": 35,
 							"nameCompartment": {
@@ -16605,7 +16384,7 @@
 											"parentStyle": true,
 											"left": 1413,
 											"top": 8343,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -16826,7 +16605,7 @@
 											"parentStyle": true,
 											"left": 1157,
 											"top": 8135,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -17047,7 +16826,7 @@
 											"parentStyle": true,
 											"left": 1595,
 											"top": 7705,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -17268,7 +17047,7 @@
 											"parentStyle": true,
 											"left": 1765,
 											"top": 7559,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -17829,105 +17608,6 @@
 						},
 						{
 							"_type": "UMLExtendView",
-							"_id": "AAAAAAGU7l0ZpcKhHZI=",
-							"_parent": {
-								"$ref": "AAAAAAGU6W6SsiABEeE="
-							},
-							"model": {
-								"$ref": "AAAAAAGU7j2MMMDni3c="
-							},
-							"subViews": [
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAGU7l0ZpcKis/8=",
-									"_parent": {
-										"$ref": "AAAAAAGU7l0ZpcKhHZI="
-									},
-									"model": {
-										"$ref": "AAAAAAGU7j2MMMDni3c="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"parentStyle": false,
-									"left": 1998,
-									"top": 4981,
-									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAGU7l0ZpcKhHZI="
-									},
-									"edgePosition": 1
-								},
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAGU7l0ZpcKjeXY=",
-									"_parent": {
-										"$ref": "AAAAAAGU7l0ZpcKhHZI="
-									},
-									"model": {
-										"$ref": "AAAAAAGU7j2MMMDni3c="
-									},
-									"font": "Arial;13;0",
-									"parentStyle": false,
-									"left": 1983,
-									"top": 4975,
-									"width": 53.49169921875,
-									"height": 13,
-									"alpha": 2.657503665689852,
-									"distance": 5.385164807134504,
-									"hostEdge": {
-										"$ref": "AAAAAAGU7l0ZpcKhHZI="
-									},
-									"edgePosition": 1,
-									"text": "«extend»"
-								},
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAGU7l0ZpcKk2oY=",
-									"_parent": {
-										"$ref": "AAAAAAGU7l0ZpcKhHZI="
-									},
-									"model": {
-										"$ref": "AAAAAAGU7j2MMMDni3c="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"parentStyle": false,
-									"left": 2017,
-									"top": 4958,
-									"height": 13,
-									"alpha": -1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAGU7l0ZpcKhHZI="
-									},
-									"edgePosition": 1
-								}
-							],
-							"font": "Arial;13;0",
-							"parentStyle": false,
-							"head": {
-								"$ref": "AAAAAAGU7l0ZpMKGiTU="
-							},
-							"tail": {
-								"$ref": "AAAAAAGU7l0ZpMJPuec="
-							},
-							"lineStyle": 1,
-							"points": "2042:5006;1975:4947",
-							"showVisibility": true,
-							"nameLabel": {
-								"$ref": "AAAAAAGU7l0ZpcKis/8="
-							},
-							"stereotypeLabel": {
-								"$ref": "AAAAAAGU7l0ZpcKjeXY="
-							},
-							"propertyLabel": {
-								"$ref": "AAAAAAGU7l0ZpcKk2oY="
-							}
-						},
-						{
-							"_type": "UMLExtendView",
 							"_id": "AAAAAAGU7l0ZpcKlfPs=",
 							"_parent": {
 								"$ref": "AAAAAAGU6W6SsiABEeE="
@@ -17948,8 +17628,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 2070,
-									"top": 4983,
+									"left": 2003,
+									"top": 4982,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -17969,8 +17649,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 2067,
-									"top": 4976,
+									"left": 2001,
+									"top": 4982,
 									"width": 53.49169921875,
 									"height": 13,
 									"alpha": 3.1573395179465122,
@@ -17993,8 +17673,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 2081,
-									"top": 4956,
+									"left": 2022,
+									"top": 4959,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -18013,7 +17693,7 @@
 								"$ref": "AAAAAAGU7l0ZpMJaAeI="
 							},
 							"lineStyle": 1,
-							"points": "2151:5006;2001:4947",
+							"points": "2050:5007;1976:4947",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGU7l0ZpcKm0Xw="
@@ -18086,7 +17766,7 @@
 											"parentStyle": true,
 											"left": 629,
 											"top": 7655,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -31933,7 +31613,7 @@
 											"left": -32,
 											"width": 77.9365234375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from 예산)"
 										},
 										{
 											"_type": "LabelView",
@@ -36066,7 +35746,7 @@
 											"top": -816,
 											"width": 77.9365234375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from 비용)"
 										},
 										{
 											"_type": "LabelView",
@@ -40802,7 +40482,7 @@
 									"parentStyle": true,
 									"left": 76.5,
 									"top": 181,
-									"width": 96,
+									"width": 97.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jizjbhxRhs="
@@ -41222,7 +40902,7 @@
 									"parentStyle": true,
 									"left": 354.5,
 									"top": 237,
-									"width": 127,
+									"width": 127.7109375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jizjbiHVOM="
@@ -41852,7 +41532,7 @@
 									"parentStyle": true,
 									"left": 151,
 									"top": 69,
-									"width": 109,
+									"width": 110.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jizjbioQHw="
@@ -42062,7 +41742,7 @@
 									"parentStyle": true,
 									"left": 63,
 									"top": 477,
-									"width": 109,
+									"width": 110.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jizjbizBWE="
@@ -42272,7 +41952,7 @@
 									"parentStyle": true,
 									"left": 208.5,
 									"top": 421,
-									"width": 79,
+									"width": 79.5703125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jizjbi+gkA="
@@ -42482,7 +42162,7 @@
 									"parentStyle": true,
 									"left": 280.5,
 									"top": 501,
-									"width": 79,
+									"width": 79.5703125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jizjbjJ2do="
@@ -42692,7 +42372,7 @@
 									"parentStyle": true,
 									"left": 168.5,
 									"top": 565,
-									"width": 79,
+									"width": 79.5703125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jizjbjUzsI="
@@ -43883,7 +43563,7 @@
 											"parentStyle": true,
 											"left": -144,
 											"top": 160,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -43906,7 +43586,7 @@
 									"parentStyle": true,
 									"left": 82.5,
 									"top": 365,
-									"width": 127,
+									"width": 127.7109375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jlKbrnHDJs="
@@ -44093,7 +43773,7 @@
 											"parentStyle": true,
 											"left": 320,
 											"top": -272,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -44116,7 +43796,7 @@
 									"parentStyle": true,
 									"left": 314.5,
 									"top": 365,
-									"width": 127,
+									"width": 127.7109375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jlKbrnSUqk="
@@ -44303,7 +43983,7 @@
 											"parentStyle": true,
 											"left": 768,
 											"top": -608,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -44326,7 +44006,7 @@
 									"parentStyle": true,
 									"left": 562.5,
 									"top": 365,
-									"width": 127,
+									"width": 127.7109375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jlKbrndDOk="
@@ -44513,7 +44193,7 @@
 											"parentStyle": true,
 											"left": 80,
 											"top": -144,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -44536,7 +44216,7 @@
 									"parentStyle": true,
 									"left": 314.5,
 									"top": 453,
-									"width": 127,
+									"width": 127.7109375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jlKbrnoJnw="
@@ -44723,7 +44403,7 @@
 											"parentStyle": true,
 											"left": -48,
 											"top": -192,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -44746,7 +44426,7 @@
 									"parentStyle": true,
 									"left": 324.5,
 									"top": 549,
-									"width": 96,
+									"width": 97.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jlKbrnzRfo="
@@ -44929,7 +44609,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"width": 123.49365234375,
+											"width": 127.384765625,
 											"height": 13,
 											"text": "(from 여행 세부 일정)"
 										},
@@ -44950,7 +44630,7 @@
 									"parentStyle": true,
 									"left": 311,
 									"top": 277,
-									"width": 109,
+									"width": 110.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7jlKbrn+6H4="
@@ -45587,7 +45267,7 @@
 											"parentStyle": true,
 											"left": 1376,
 											"top": 16,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -45695,7 +45375,7 @@
 											"parentStyle": true,
 											"left": -128,
 											"top": -272,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -45718,7 +45398,7 @@
 									"parentStyle": true,
 									"left": 276.5,
 									"top": 309,
-									"width": 96,
+									"width": 97.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7j2ML8BexXg="
@@ -45905,7 +45585,7 @@
 											"parentStyle": true,
 											"left": -160,
 											"top": -352,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -45928,7 +45608,7 @@
 									"parentStyle": true,
 									"left": 132.5,
 									"top": 309,
-									"width": 96,
+									"width": 97.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7j2ML8BpX3c="
@@ -46115,7 +45795,7 @@
 											"parentStyle": true,
 											"left": 608,
 											"top": -272,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -46138,7 +45818,7 @@
 									"parentStyle": true,
 									"left": 451.5,
 									"top": 309,
-									"width": 91.61181640625,
+									"width": 92.5703125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7j2ML8B0+GQ="
@@ -46325,7 +46005,7 @@
 											"parentStyle": true,
 											"left": 800,
 											"top": -464,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -46535,7 +46215,7 @@
 											"parentStyle": true,
 											"left": -144,
 											"top": -160,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -46558,7 +46238,7 @@
 									"parentStyle": true,
 									"left": 292.5,
 									"top": 421,
-									"width": 96,
+									"width": 97.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7j2ML8CKf+A="
@@ -46745,7 +46425,7 @@
 											"parentStyle": true,
 											"left": -400,
 											"top": -368,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -46768,7 +46448,7 @@
 									"parentStyle": true,
 									"left": 148.5,
 									"top": 421,
-									"width": 96,
+									"width": 97.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7j2ML8CVmow="
@@ -46955,7 +46635,7 @@
 											"parentStyle": true,
 											"left": 608,
 											"top": -976,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -47165,7 +46845,7 @@
 											"parentStyle": true,
 											"left": 208,
 											"top": -944,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -47188,7 +46868,7 @@
 									"parentStyle": true,
 									"left": 340.5,
 									"top": 213,
-									"width": 96,
+									"width": 97.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7j2MMMCrOXI="
@@ -47969,7 +47649,7 @@
 											"parentStyle": true,
 											"left": -928,
 											"top": -848,
-											"width": 77.9365234375,
+											"width": 79.244140625,
 											"height": 13,
 											"text": "(from 갤러리)"
 										},
@@ -47992,7 +47672,7 @@
 									"parentStyle": true,
 									"left": 268.5,
 									"top": 117,
-									"width": 96,
+									"width": 97.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU7j2MMMDOfmY="
@@ -48553,7 +48233,7 @@
 											"top": -400,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -48763,7 +48443,7 @@
 											"top": -208,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -48973,7 +48653,7 @@
 											"top": 80,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -49183,7 +48863,7 @@
 											"top": -480,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -49393,7 +49073,7 @@
 											"top": -512,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -49603,7 +49283,7 @@
 											"top": -192,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -49813,7 +49493,7 @@
 											"top": -128,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -50023,7 +49703,7 @@
 											"top": 16,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -50233,7 +49913,7 @@
 											"top": -224,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -50583,7 +50263,7 @@
 											"top": -704,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -50911,7 +50591,7 @@
 											"top": -80,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -51132,7 +50812,7 @@
 											"top": -32,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -51483,7 +51163,7 @@
 											"top": -64,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -51693,7 +51373,7 @@
 											"top": -80,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
@@ -51903,7 +51583,7 @@
 											"top": -80,
 											"width": 85.0966796875,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from 투표)"
 										},
 										{
 											"_type": "LabelView",
