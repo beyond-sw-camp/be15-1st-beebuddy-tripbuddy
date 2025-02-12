@@ -1,37 +1,36 @@
-DROP TABLE IF EXISTS `tbl_trip_details`;
-
-CREATE TABLE `tbl_trip_details` (
-	`detail_id`	INT AUTO_INCREMENT NOT NULL,
-	`category_id` INT NOT NULL COMMENT '카테고리 ID',
-	`room_id` INT NOT NULL COMMENT '여행방 ID',
-	`option_id`	INT AUTO_INCREMENT NULL COMMENT '투표항목 ID',
-	`detail_content` VARCHAR(50) NOT NULL COMMENT '세부 항목',
-	`custom_order` INT NOT NULL COMMENT '사용자정의 순서',
-	`visit_day`	INT NULL COMMENT '방문일',
-	`is_hidden`	ENUM('Y', 'N') NOT NULL DEFAULT 'N' COMMENT '숨김여부'
-);
-
-ALTER TABLE `tbl_trip_details` ADD CONSTRAINT `PK_TBL_TRIP_DETAILS` PRIMARY KEY (
-	`detail_id`
-);
-
-ALTER TABLE `tbl_trip_details` ADD CONSTRAINT `FK_tbl_category_TO_tbl_trip_details_1` FOREIGN KEY (
-	`category_id`
+INSERT INTO tbl_trip_details (
+    category_id, room_id, option_id, detail_content, custom_order, visit_day, is_hidden
 )
-REFERENCES `tbl_category` (
-	`category_id`
-);
+VALUES 
+-- 날짜 (category_id = 1)
+(1, 101, NULL, '여행 날짜 확정: 2025-07-20', 1, NULL, 'Y'),
+(1, 102, NULL, '일정 조정 중', 2, NULL, 'Y'),
 
-ALTER TABLE `tbl_trip_details` ADD CONSTRAINT `FK_tbl_trip_TO_tbl_trip_details_1` FOREIGN KEY (
-	`room_id`
-)
-REFERENCES `tbl_trip` (
-	`room_id`
-) ON DELETE CASCADE;
+-- 숙소 예약 (category_id = 2)
+(2, 101, NULL, '서울 강남 호텔 체크인', 1, 1, 'N'),
+(2, 102, NULL, '제주 오션뷰 호텔 숙박', 1, NULL, 'N'),
 
-ALTER TABLE `tbl_trip_details` ADD CONSTRAINT `FK_tbl_vote_option_TO_tbl_trip_details_1` FOREIGN KEY (
-	`option_id`
-)
-REFERENCES `tbl_vote_option` (
-	`option_id`
-);
+-- 맛집 일정 (category_id = 3)
+(3, 101, NULL, '이태원 브런치 카페', 1, 2, 'N'),
+(3, 101, NULL, '한강 라면 먹기', 2, NULL, 'N'),
+(3, 102, NULL, '제주 흑돼지 맛집 방문', 1, 1, 'N'),
+
+-- 여행지 방문 (category_id = 4)
+(4, 101, NULL, '경복궁 투어', 1, 2, 'N'),
+(4, 101, NULL, '남산 타워 야경 보기', 2, NULL, 'N'),
+(4, 102, NULL, '성산일출봉 트래킹', 1, 2, 'N'),
+
+-- 기타 (category_id = 5) 투표 결과 반영 일정 (숨김)
+(5, 101, 2001, '자유 시간', 1, 3, 'Y'),
+(5, 101, 2002, '미정 일정 논의', 2, NULL, 'Y');
+
+SELECT * FROM tbl_trip WHERE room_id = 1;
+SELECT * FROM tbl_category WHERE category_id = 1;
+
+-- 여행 일정 수정
+UPDATE tbl_trip_details 
+SET visit_day = 2
+WHERE detail_id = 5;
+
+-- 여행 일정 삭제
+DELETE FROM tbl_trip_details WHERE detail_id = 3;
