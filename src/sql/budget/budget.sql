@@ -1,10 +1,14 @@
 -- 예산 DML
 
 #### 백엔드로부터 받은 내용 ######
-SET @member_id = 202;
+SET @member_id = 6;
 SET @group_id = 1;
 SET @room_id = 12;
 SET @category_id = 2;
+
+SET @budget_name = '감자탕';
+SET @budget_amount = 80000;
+
 -- 0. 공통 사항
 -- (1) 권한 확인
 CALL proc_isMemberExist(@member_id); -- 유저 존재 확인
@@ -88,6 +92,17 @@ ORDER BY
 
 
 #### 2. 예산 작성 ####
+INSERT
+	tbl_budget(budget_name, budget_amount, room_id, writer_id, category_id)
+VALUES
+(
+	@budget_name
+	, @budget_amount
+	, @room_id
+	, @member_id
+	, @category_id
+);
+
 
 #### 3. 예산 수정 ####
 
