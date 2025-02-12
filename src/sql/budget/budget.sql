@@ -1,6 +1,6 @@
 -- 예산 DML
 
-#### 백엔드로부터 받은 내용 ####
+#### 백엔드로부터 받은 내용 ######
 SET @member_id = 202;
 SET @group_id = 1;
 SET @room_id = 12;
