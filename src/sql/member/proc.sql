@@ -1,9 +1,9 @@
 -- Procedure
 -- 계정 복구 회원 확인 
-DROP PROCEDURE IF EXISTS checkRestoredMember;
+DROP PROCEDURE IF EXISTS proc_checkRestoredMember;
 
 DELIMITER //
-CREATE PROCEDURE `checkRestoredMember`( 
+CREATE PROCEDURE `proc_checkRestoredMember`( 
     IN secede_at TIMESTAMP,  
     OUT result BOOLEAN 
 )
@@ -18,5 +18,30 @@ BEGIN
     ELSE
       SET result = FALSE;
     END IF;
+END //
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS proc_insertTblSetNotice;
+
+DELIMITER //
+CREATE PROCEDURE `proc_insertTblSetNotice`( 
+    IN memberid INT
+)
+BEGIN
+    
+    DECLARE nt_count INT;
+    DECLARE count INT;
+
+    SELECT COUNT(notice_id) INTO nt_count
+      FROM tbl_notice;
+
+    SET count = 1;
+
+    while count <= nt_count DO
+    INSERT INTO tbl_set_notice(member_id, notice_id)
+    VALUES (memberid, count);
+    SET count = count + 1;
+    END WHILE;
+
 END //
 DELIMITER ;

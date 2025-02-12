@@ -9,6 +9,8 @@ WHERE email = 'user199@example.com';
 -- 1-2 회원 정보 Insert
 INSERT INTO  tbl_member (email, password, member_name, birthday, phone_number)
 VALUES ('user200@example.com', 'hashed_password_200', '김소원', '1996-07-03', '01027527777');
+-- 1-2-1. 알림 설정 테이블 insert 
+-- CALL proc_insertTblSetNotice(NEW.member_id);
 
 -- 2. 로그인
 
@@ -102,4 +104,4 @@ UPDATE tbl_set_notice
 -- 4.2 회원 탈퇴
   UPDATE tbl_member
      SET is_deleted = 'N'
-   WHERE member_id = 1  
+   WHERE member_id = 1 ;
