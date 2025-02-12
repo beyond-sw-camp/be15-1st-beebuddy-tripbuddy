@@ -57,7 +57,7 @@ BEGIN
 		tbl_group_member
 	WHERE member_id = target_member_id 
 	AND group_id = target_group_id -- pk용
-	AND invite_status = 'Y'; -- 초대에 응한 상태일 경우
+	AND invite_accepted = 'Y'; -- 초대에 응한 상태일 경우
 	
 	IF count_member = 0 THEN
 		SIGNAL member_not_in_group;

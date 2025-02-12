@@ -1,14 +1,17 @@
 -- 예산 DML
 
 #### 백엔드로부터 받은 내용 ######
-SET @member_id = 6;
-SET @group_id = 1;
-SET @room_id = 12;
-SET @category_id = 2;
+SET @budget_id = 1;
+SET @member_id = 51;
+SET @member_id2 = 25;
+SET @group_id = 16;
+SET @room_id = 15;
+SET @category_id = 3;
 
 SET @budget_name = '감자탕';
+SET @budget_name2 = '컴포즈 커피';
 SET @budget_amount = 80000;
-
+SET @budget_amount2 = 12000;
 -- 0. 공통 사항
 -- (1) 권한 확인
 CALL proc_isMemberExist(@member_id); -- 유저 존재 확인
@@ -36,7 +39,7 @@ SELECT
 	, bg.budget_amount
 	, cg.category_name
 FROM
-	tbl_budget
+	tbl_budget bg
 JOIN
 	tbl_category cg
 ON
@@ -54,14 +57,14 @@ SELECT
 	, cg.category_name
 FROM
 	tbl_budget bg
-JOIN
+LEFT JOIN
 	tbl_category cg
 ON
 	bg.category_id = cg.category_id
 WHERE
 	room_id = @room_id
 AND
-	category_id = @category_id -- 실제로는 in 형태로 동작할 수 있음
+	bg.category_id = @category_id -- 실제로는 in 형태로 동작할 수 있음
 ORDER BY
 	updated_at ASC;	
 
@@ -90,13 +93,12 @@ WHERE
 ORDER BY
 	updated_at ASC;
 
-
 #### 2. 예산 작성 ####
-INSERT
+
+INSERT INTO
 	tbl_budget(budget_name, budget_amount, room_id, writer_id, category_id)
-VALUES
-(
-	@budget_name
+VALUES(
+	  @budget_name
 	, @budget_amount
 	, @room_id
 	, @member_id
@@ -105,8 +107,35 @@ VALUES
 
 
 #### 3. 예산 수정 ####
+-- 예산 수정 시, 작성자가 최종 수정자로 변경됨!
+UPDATE
+	tbl_budget
+SET
+	  budget_name = @budget_name2
+	, budget_amount = @budget_amount2
+	, room_id	= @room_id
+	, writer_id = @member_id2
+WHERE
+	budget_id = @budget_id;
+	
+
 
 #### 4. 예산 삭제 ####
+-- 예산 삭제 시, 댓글들 is deleted 'N'으로 바꾸는 트리거 필요함!
+
+-- (1) 선택 삭제
+DELETE
+FROM
+	tbl_budget
+WHERE
+	budget_id = @budget_id;
+	
+-- (2) 모두 삭제
+DELETE
+FROM
+	tbl_budget
+WHERE
+	1=1;
 
 #### 5. 예산 댓글 조회 ####
 
