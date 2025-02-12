@@ -15,7 +15,7 @@ SELECT
 FROM
 	tbl_budget_comment
 WHERE
-	comment_id = @comment_id
+	comment_id = @comment_id;
 
 
 #### 6. 예산 댓글 수정 ####
@@ -24,7 +24,7 @@ UPDATE
 SET
 	contents=@contents
 WHERE
-	writer_id = @member_id -- 작성자만 수정 가능
+	writer_id = @member_id; -- 작성자만 수정 가능
 
 #### 7. 예산 댓글 삭제 ####
 UPDATE
@@ -32,4 +32,4 @@ UPDATE
 SET
 	is_deleted='Y';
 WHERE
-	writerId = @member_id
+	writerId = @member_id;
