@@ -51,15 +51,21 @@ WHERE group_id = @group_id
 -- 4. 그룹 구성원 초대
 -- 비즈니스 규칙 체크 필요: TODO
 SET @member_id = 100;
+
+
 SET @group_id = 47;
+
+
 SET @invitor_id = 3;
+
 
 SELECT COUNT(*)
 FROM tbl_member mb
 JOIN tbl_group_member gmb ON mb.member_id = gmb.member_id
 JOIN tbl_group gr ON gmb.group_id = gr.group_id
 WHERE gmb.member_id = @invitor_id
-AND gmb.group_id = @group_id; -- 초대자가 해당 그룹의 멤버인지 체크
+  AND gmb.group_id = @group_id; -- 초대자가 해당 그룹의 멤버인지 체크
+
 
 INSERT INTO tbl_group_member(group_id, member_id, role_id, invite_accepted)
 VALUES (@group_id, @member_id, 2, 'N'); -- 위의 COUNT(*) 결과가 1일 때 수행
@@ -88,7 +94,7 @@ DELETE
 FROM tbl_group_member
 WHERE group_id = @group_id
   AND member_id = @member_id;
-  
+
 -- 6. 그룹장 양도
 SET @current_leader_id = 87;
 
