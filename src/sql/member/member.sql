@@ -35,8 +35,7 @@ SELECT member_id
   FROM tbl_member
  WHERE email = 'user200@example.com' 
    AND PASSWORD = 'hashed_password_200';
-   
-   
+
 -- 3. 회원정보 수정 
 
 -- 3-1. 회원정보 조회
@@ -93,3 +92,14 @@ UPDATE tbl_set_notice
                     )
    AND notice_id IN (1, 2, 3, 4, 5); 
 
+  -- 4. 회원탈퇴 
+  -- 4.1 회원 그룹권한 확인
+  -- 회원이 속한 그룹 중 그 권한이 그룹장인 경우에는 탈퇴가 불가능하다. 
+  SELECT COUNT(member_id)
+    FROM tbl_group_member
+   WHERE member_id = 2
+     AND role_id = 1;
+-- 4.2 회원 탈퇴
+  UPDATE tbl_member
+     SET is_deleted = 'N'
+   WHERE member_id = 1  
