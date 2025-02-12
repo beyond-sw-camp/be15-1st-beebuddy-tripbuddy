@@ -34,7 +34,7 @@ VALUES
 SELECT * FROM tbl_trip WHERE room_id = 1;
 SELECT * FROM tbl_category WHERE category_id = 1;
 -- dt-trip_details / vto-vote_option / cg-category
--- 여행 세부 일정의 카테고리명을 포함한 데이터 조회회
+-- 여행 세부 일정의 카테고리명을 포함한 데이터 조회
 SELECT
     dt.detail_id,
     dt.room_id,
