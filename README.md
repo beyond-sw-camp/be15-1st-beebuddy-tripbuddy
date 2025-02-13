@@ -122,15 +122,24 @@
 - 그룹 생성 및 초대
 - 그룹 내 여러 개의 여행 방 생성 가능 
 <br><br>
+
 ### <p id="1-4">1-4. WBS(Work Breakdown Structure)</p>
 <a href="https://docs.google.com/spreadsheets/d/1g5JGdYRIqlfTwxo8pWvn_RjXfj637lqHXj-BadZo7cY/edit?gid=661890835#gid=661890835">WBS</a>
 <br><br>
+
 ### <p id="1-5">1-5. 요구사항 명세서</p>
 <a href="https://docs.google.com/spreadsheets/d/1g5JGdYRIqlfTwxo8pWvn_RjXfj637lqHXj-BadZo7cY/edit?gid=1875085029#gid=1875085029">요구사항 명세서</a>
 ![요구사항 명세서](https://github.com/user-attachments/assets/26c892a0-9ac2-4d60-bce0-e6bcd6eaf763)
 
 ### <p id="1-6">1-6. UML</p>
-![image](https://github.com/user-attachments/assets/20d39e15-95e3-4734-9d13-e92b41ec5810)
+<details>
+<summary>UML</summary>
+<div markdown="1">
+  <img src="https://github.com/user-attachments/assets/20d39e15-95e3-4734-9d13-e92b41ec5810"/>
+</div>
+</details>
+<br><br>
+
 
 ## <p id="2">2. DB모델링</p>
 
@@ -142,13 +151,23 @@
 ### <p id="2-2">2-2. 물리 모델링</p>
 ![물리 모델](https://github.com/user-attachments/assets/680993b9-5395-4080-9988-1883ee5269c3)
 
-
+<br><br>
 ## <p id="3">3. 서버 구축</p>
-### <p id="3-1">3-1. 리플리케이션</p>
+### <p id="3-1">3-1. MariaDB 리플리케이션</p>
+![레플리케이션](https://github.com/user-attachments/assets/a25a4ee2-7125-4b71-b017-ce93bad93e30)
+- DB 서버의 부하를 분산시키고 데이터를 백업하기 위해 Master-Slave 구조로 DB서버 구축 진행
+- MariaDB에서 제공하는 리플리케이션(DB 복제) 기능을 사용 
+- 2대의 리눅스 VM 내에 설치한 mariaDB를 master(1번)와 slave(2번)로 나누어 비동기 복제 방식으로 데이터를 복제하도록 함
+- Master-Slave 구조
+  - master 서버: 데이터의 변경에 대한 처리를 담당하며 변경 발생시 binary log에 기록한다. 
+  - slave 서버: master 서버에 접근하여 binary log를 전달받고 이를 slave DB에 반영하고 조회의 부담을 담당한다.
+  - 단, slave 서버는 master의 데이터를 전달받아 백업하는 용도이므로 readonly 설정을 하여 데이터 변경이 불가능하도록 한다. 
+<br>
+
 ### <p id="3-2">3-2. DDL</p>
 [DDL](https://github.com/beebuddy1/be15-1st-beebuddy-tripbuddy/blob/a1ba4df29c8ee8648c906ceb246ab0a3a9b5330f/src/ddl/ddl.sql)
 
-
+<br><br>
 ## <p id="4">4. 테스트케이스 </p>
 [테스트케이스](https://docs.google.com/spreadsheets/d/1QRd2XA-3SaPd8fHA2NCjy8_Xh_2T9ZUe7HLELneNZ48/edit?usp=sharing)  
 ![beebuddy 테스트 케이스](https://github.com/user-attachments/assets/aa9ba96c-eb10-4040-8940-add43f311140)
@@ -175,7 +194,7 @@
 
 ## <p id="6">6. 트러블슈팅</p>
 
-### PK 지정 전 AUTO_INCREMENT Error
+### 6-1. PK 지정 전 AUTO_INCREMENT Error
 #### 1️⃣ 에러 발생 코드
 ``` sql
  CREATE TABLE `tbl_member` (
@@ -216,7 +235,7 @@ ALTER TABLE `tbl_member` MODIFY member_id INT NOT NULL AUTO_INCREMENT PRIMARY KE
 
 <br>
 
-### ALTER로 ON UPDATE CASCADE ON DELETE CASCADE 지정 Error
+### 6-2. ALTER로 ON UPDATE CASCADE ON DELETE CASCADE 지정 Error
 #### 1️⃣ 에러 발생 코드
 ``` sql
 ALTER TABLE `tbl_group_member` ADD CONSTRAINT `FK_tbl_group_TO_tbl_group_member_1` 
@@ -251,7 +270,7 @@ REFERENCES `tbl_group` (
 
 <br>
 
-### TRIGGER AFTER DELETE 옵션 NEW 사용 불가
+### 6-3. TRIGGER AFTER DELETE 옵션 NEW 사용 불가
 #### 1️⃣ 에러 발생 코드
 ``` sql
 DELIMITER ;
@@ -319,7 +338,7 @@ DELIMITER ;
 
 <br>
 
-### Organization Repository에 push시 Permission 에러
+### 6-4. Organization Repository에 push시 Permission 에러
 #### 1️⃣ 에러 발생 상황
 - ##### Organization Repository를 Local에 `clone` 한 후 `branch` 생성
 - ##### 생성한 `branch`에서 파일을 수정하여 `commit` 하고 원격에 `push`
@@ -342,7 +361,7 @@ fatal: unable to access 'https://github.com/beebuddy1/be15-1st-beebuddy-tripbudd
 
 <br>
 
-### 레플리카 서버 구축 시 테이블 생성 오류
+### 6-5. 레플리카 서버 구축 시 테이블 생성 오류
 #### 1️⃣ 에러 발생 상황
 ``` sql
  CREATE TABLE `tbl_member` (
@@ -375,7 +394,7 @@ ALTER TABLE `tbl_member` ADD CONSTRAINT `PK_TBL_MEMBER` PRIMARY KEY (
 
 <br>
 
-### MariaDB doesn’t support variable for offset
+### 6-6. MariaDB doesn’t support variable for offset
 #### 1️⃣ 에러 발생 상황
 ``` sql
 SET @room_id = 10;
