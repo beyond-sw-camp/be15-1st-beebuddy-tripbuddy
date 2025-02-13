@@ -52,9 +52,11 @@
 
 <a href="#4">4. 테스트케이스 </a>
 
-<a href="#5">5. 트러블슈팅 </a>
+<a href="#5">5. 기술 스택 </a>
 
-<a href="#5">6. 팀원 회고 </a>
+<a href="#6">6. 트러블슈팅 </a>
+
+<a href="#7">7. 팀원 회고 </a>
 
 <br>
 
@@ -152,7 +154,26 @@
 ![beebuddy 테스트 케이스](https://github.com/user-attachments/assets/aa9ba96c-eb10-4040-8940-add43f311140)
 
 
-## <p id="5">5. 트러블슈팅</p>
+<br><br>
+## <p id="5">5. 기술 스택 </p>
+<div dir="auto">
+<img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white">
+<img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=white">
+<img src="https://img.shields.io/badge/vscode-000000?style=for-the-badge&logo=vsco&logoColor=white">
+<img src="https://img.shields.io/badge/Sourcetree-0052CC?style=for-the-badge&logo=sourcetree&logoColor=white">
+<img src="https://img.shields.io/badge/HeidiSQL-25D366?style=for-the-badge&logoColor=white">
+</div>
+<div dir="auto">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/ERD CLOUD-339AF0?style=for-the-badge&logoColor=white">
+<img src="https://img.shields.io/badge/StarUML-3D03A7?style=for-the-badge&logoColor=white">
+<img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white">
+</div>
+
+<br><br>
+
+## <p id="6">6. 트러블슈팅</p>
 
 ### PK 지정 전 AUTO_INCREMENT Error
 #### 1️⃣ 에러 발생 코드
@@ -412,11 +433,10 @@ EXECUTE stmt;
 DEALLOCATE PREPARE stmt;
 ```
 
-<br>
+<br><br>
 
 
 
-
-## <p id="6">6. 회고록</p>
+## <p id="7">7. 회고록</p>
 
 
