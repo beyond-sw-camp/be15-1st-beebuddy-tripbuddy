@@ -166,7 +166,7 @@ FROM
 WHERE
 	1=1;
 
-#### 5. 예산 댓글 조회 ####
+#### 5. 비용 댓글 조회 ####
 SELECT
 	ctc.comment_id
 	, ctc.contents
@@ -180,7 +180,7 @@ JOIN
 ON
 	ctc.member_id = mem.member_id
 
-#### 6. 예산 댓글 수정 ####
+#### 6. 비용 댓글 수정 ####
 UPDATE
 	tbl_cost_comment
 SET
@@ -190,7 +190,7 @@ WHERE
 
 
 
-#### 7. 예산 댓글 삭제 ####
+#### 7. 비용 댓글 삭제 ####
 DELETE
 FROM
 	tbl_cost_comment
