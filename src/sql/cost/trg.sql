@@ -2,6 +2,7 @@
 DELIMITER //
 
 CREATE OR REPLACE TRIGGER trg_after_insert_cost
+
 	AFTER INSERT
 	ON tbl_cost
 	FOR EACH ROW
@@ -39,7 +40,8 @@ DELIMITER ;
 -- 비용 수정 트리거
 DELIMITER //
 
-CREATE OR REPLACE TRIGGER trg_after_update_cost
+
+CREATE OR REPLACE TRIGGER trg_afterUpdateCost
 	AFTER UPDATE
 	ON tbl_cost
 	FOR EACH ROW
@@ -80,7 +82,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE OR REPLACE TRIGGER trg_after_delete_cost
+CREATE OR REPLACE TRIGGER trg_afterDeleteCost
 	AFTER DELETE
 	ON tbl_cost
 	FOR EACH ROW
