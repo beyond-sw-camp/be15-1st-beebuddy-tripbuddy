@@ -1,9 +1,11 @@
+
+
+
 -- 갤러리 사진/영상 목록 조회
 
 SET @room_id = 10;
 SET @page = 1;
 SET @offset = (@page - 1) * 12;
-
 SET @sql_query = CONCAT(
     'SELECT file_id, file_name, file_path, created_at, is_deleted, room_id ',
     'FROM tbl_gallery ',
@@ -39,6 +41,7 @@ DEALLOCATE PREPARE stmt;
 --     gal.created_at DESC
 -- LIMIT 12 OFFSET @offset;
 
+
 -- 갤러리 사진/영상 상세 조회
 SET @file_id=2;
 SELECT
@@ -58,6 +61,9 @@ WHERE
     gal.file_id = @file_id
     AND gal.is_deleted = 'N';
 
+
+CALL proc_isMemberExist(@member_id); -- 유저 존재 확인
+CALL proc_isMemberInGroup(@member_id, @group_id); -- 그룹에 속한지 확인
 -- 갤러리 사진/영상 등록
 SET @file_name = '단체사진.png';
 SET @file_path = 'http://via.placeholder.com/480x480';
@@ -77,6 +83,8 @@ VALUES (
     @member_id
 );
 
+CALL proc_isMemberExist(@member_id); -- 유저 존재 확인
+CALL proc_isMemberInGroup(@member_id, @group_id); -- 그룹에 속한지 확인
 -- 갤러리 사진/영상 삭제
 SET @file_id = 1;
 SET @member_id = 2;
