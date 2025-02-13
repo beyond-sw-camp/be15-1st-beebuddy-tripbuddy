@@ -1,6 +1,9 @@
 -- 1. 여행방 조회
 SET @group_id = 1;
+
+
 SET @member_id = 72;
+
 
 SELECT tr.room_name
 FROM tbl_trip tr
@@ -21,22 +24,47 @@ SET @enddate = '2024-03-29';
 
 
 SET @group_id = 1;
+
+
 SET @member_id = 72;
+
+
+SET @cnt = 0;
+
+CALL proc_check_valid_group_member(@group_id, @member_id, @cnt);
 
 
 INSERT INTO tbl_trip(room_name, startdate, enddate, group_id)
-VALUES (@room_name, @startdate, @enddate, @group_id);
+SELECT @room_name,
+       @startdate,
+       @enddate,
+       @group_id
+FROM DUAL -- select where 오류를 대응하기 위한 가상테이블
+
+WHERE @cnt=1;
 
 -- 3. 여행방 제목 수정
 SET @new_name = '수정한 이름';
+
+
 SET @member_id = 72;
+
+
 SET @room_id = 1;
+
+
+SET @group_id = 1;
+
+
+SET @cnt = 0;
+
+CALL proc_check_valid_group_member(@group_id, @member_id, @cnt);
 
 
 UPDATE tbl_trip
 SET room_name = @new_name
-WHERE room_id = @room_id;
--- 그룹 멤버가 맞는지 검증
+WHERE room_id = @room_id
+  AND @cnt=1; -- cnt 2 나와서 수정 안됨. 로직 수정 필요
 
 -- 4. 여행방 날짜 수정
 SET @startdate = '2022-05-30';
@@ -46,16 +74,20 @@ SET @enddate = '2022-06-02';
 
 
 SET @room_id = 1;
+
+
 SET @member_id = 72;
+
 
 UPDATE tbl_trip
 SET startdate = @startdate,
     enddate = @enddate
 WHERE room_id = @room_id;
--- 그룹 멤버가 맞는지 검증
 
--- 5. 여행방 삭제
+-- 그룹 멤버가 맞는지 검증
+ -- 5. 여행방 삭제
 SET @room_id = 1;
+
 
 DELETE
 FROM tbl_trip
