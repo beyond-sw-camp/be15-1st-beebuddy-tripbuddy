@@ -25,11 +25,12 @@ VALUES
 (4, 102, NULL, '성산일출봉 트래킹', 1, 2, 'N'),
 -- 기타 (category_id = 5) 투표 결과 반영 일정 (숨김)
 (5, 101, 2001, '자유 시간', 1, 3, 'Y'),
-(5, 101, 2002, '미정 일정 논의', 2, NULL, 'Y');
+(5, 101, 2002, '미정 일정 논의', 2, NULL, 'Y'),
+(2, 3, 1, '하얏트 호텔', 4, 3, 'N');
+
 SELECT * FROM tbl_trip WHERE room_id = 1;
 SELECT * FROM tbl_category WHERE category_id = 1;
--- dt-trip_details / vto-vote_option / cg-category
--- 여행 세부 일정의 카테고리명을 포함한 데이터 조회
+
 SELECT
     dt.detail_id,
     dt.room_id,
