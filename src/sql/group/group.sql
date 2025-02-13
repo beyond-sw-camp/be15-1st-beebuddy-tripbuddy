@@ -10,18 +10,33 @@ WHERE mb.is_deleted = 'N'
   AND mb.member_id = @member_id;
 
 -- 2. 그룹 생성
-SET @group_name = '그룹이름';
-
-
 SET @member_id = 2;
 
 
+SET @group_name = '새로운 그룹';
+
+-- 해당 사용자가 속한 그룹 수 확인
+
+SELECT COUNT(*) INTO @group_count
+FROM tbl_group_member
+WHERE member_id = @member_id;
+
+-- 그룹이 100개 미만일 때만 INSERT 실행
+
+DELIMITER //
+IF @group_count < 100 THEN
 INSERT INTO tbl_group(group_name, created_at)
 VALUES (@group_name, DEFAULT);
 
 
 INSERT INTO tbl_group_member(group_id, member_id, role_id, invite_accepted)
 VALUES (LAST_INSERT_ID(), @member_id, 1, 'Y');
+
+ELSE SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = '그룹 개수 제한 (최대 100개)';
+
+END IF //
+DELIMITER ;
 
 -- 3. 그룹 이름 수정
 SET @group_id = 5;
@@ -49,7 +64,7 @@ WHERE group_id = @group_id
        AND gmb.role_id = @role_id) = 1; -- 방장이면 그룹 이름 수정 가능 (member_id 2일 때는 수정 안됨)
 
 -- 4. 그룹 구성원 초대
--- 비즈니스 규칙 체크 필요: TODO
+-- 비즈니스 규칙 체크 필요: TODO (위와 같은 방법으로 그룹 구성원 수를 확인, 100명 미만이면 insert)
 SET @member_id = 100;
 
 
