@@ -118,14 +118,17 @@ JOIN tbl_member pr
     ON ct.payer_id = pr.member_id
 WHERE ct.room_id = @room_id
 ORDER BY ct.updated_at ASC;
-#### 2. 예산 작성 ####
+
+
+#### 2. 비용 작성 ####
 INSERT INTO
-	tbl_budget(budget_name, budget_amount, room_id, writer_id, category_id)
+	tbl_budget(cost_name, cost_amount, room_id, writer_id, payer_id, category_id)
 VALUES(
 	  @budget_name
 	, @budget_amount
 	, @room_id
 	, @member_id
+	, @memver_id2
 	, @category_id
 );
 
@@ -141,13 +144,13 @@ SET
 	, cost_amount = @cost_amount2
 	, writer_id = @member_id2
 	, category_id = @category_id
-	, payeer = @payyer_id
+	, payer = @payer_id
 WHERE
 	cost_id = @cost_id;
 	
 
 
-#### 4. 예산 삭제 ####
+#### 4. 비용 삭제 ####
 
 -- (1) 선택 삭제
 DELETE
