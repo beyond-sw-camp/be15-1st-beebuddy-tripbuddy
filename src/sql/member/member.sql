@@ -10,7 +10,8 @@ WHERE email = 'user199@example.com';
 INSERT INTO  tbl_member (email, password, member_name, birthday, phone_number)
 VALUES ('user200@example.com', 'hashed_password_200', '김소원', '1996-07-03', '01027527777');
 -- 1-2-1. 알림 설정 테이블 insert 
--- CALL proc_insertTblSetNotice(NEW.member_id);
+CALL proc_insertTblSetNotice(NEW.member_id);
+
 
 -- 2. 로그인
 
@@ -33,19 +34,27 @@ UPDATE tbl_member
  WHERE email = 'user200@example.com'; 
 
 -- 2-3. 로그인
-SELECT member_id
+SELECT member_id,
+       updated_at,
+       is_deleted
   FROM tbl_member
  WHERE email = 'user200@example.com' 
    AND PASSWORD = 'hashed_password_200';
+
+-- 2-3-1. 비활성화된 회원이 로그인 시도 시 
+SET @result = false;
+CALL proc_checkRestoredMember('2023-12-26 16:31:49', @result);
+SELECT @result;
+
 
 -- 3. 회원정보 수정 
 
 -- 3-1. 회원정보 조회
 SELECT email,
-	 	 PASSWORD,
-	 	 member_name,
-	 	 birthday,
-	 	 phone_number
+       PASSWORD,
+       member_name,
+       birthday,
+       phone_number
   FROM tbl_member
  WHERE email = 'user200@example.com';
  
@@ -61,7 +70,7 @@ UPDATE tbl_member
 -- 3-2-3. 둘 다 수정
 UPDATE tbl_member
    SET PASSWORD = 'hashed_edit_password_200', 
-		 phone_number='01027527778'
+		   phone_number='01027527778'
  WHERE email = 'user200@example.com'; 
 
 -- 3-3. 알림 설정
@@ -84,24 +93,24 @@ UPDATE tbl_set_notice
                     )
    AND notice_id IN (1, 2, 3, 4, 5); 
  
- -- 3-3-3.  알림 ON
+-- 3-3-3.  알림 ON
 UPDATE tbl_set_notice
    SET notice_status = 'Y'
  WHERE member_id = (
-                      SELECT member_id
-                        FROM tbl_member
-                       WHERE email = 'user200@example.com'
-                    )
+                     SELECT member_id
+                       FROM tbl_member
+                      WHERE email = 'user200@example.com'
+                   )
    AND notice_id IN (1, 2, 3, 4, 5); 
 
-  -- 4. 회원탈퇴 
-  -- 4.1 회원 그룹권한 확인
-  -- 회원이 속한 그룹 중 그 권한이 그룹장인 경우에는 탈퇴가 불가능하다. 
-  SELECT COUNT(member_id)
-    FROM tbl_group_member
-   WHERE member_id = 2
-     AND role_id = 1;
+-- 4. 회원탈퇴 
+-- 4.1 회원 그룹권한 확인
+-- 회원이 속한 그룹 중 그 권한이 그룹장인 경우에는 탈퇴가 불가능하다. 
+SELECT COUNT(member_id)
+  FROM tbl_group_member
+ WHERE member_id = 2
+   AND role_id = 1;
 -- 4.2 회원 탈퇴
-  UPDATE tbl_member
-     SET is_deleted = 'N'
-   WHERE member_id = 1 ;
+UPDATE tbl_member
+   SET is_deleted = 'N'
+ WHERE member_id = 1 ;

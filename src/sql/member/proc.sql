@@ -1,6 +1,7 @@
 -- Procedure
 -- 계정 복구 회원 확인 
 DROP PROCEDURE IF EXISTS proc_checkRestoredMember;
+DROP PROCEDURE IF EXISTS proc_insertTblSetNotice;
 
 DELIMITER //
 CREATE PROCEDURE `proc_checkRestoredMember`( 
@@ -20,8 +21,6 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
-
-DROP PROCEDURE IF EXISTS proc_insertTblSetNotice;
 
 DELIMITER //
 CREATE PROCEDURE `proc_insertTblSetNotice`( 
