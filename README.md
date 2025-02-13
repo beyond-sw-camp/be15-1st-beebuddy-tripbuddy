@@ -48,11 +48,12 @@
     <td align="center"> <a href="https://github.com/Cho-Hyun-Seung">조현승</a></td>
     <td align="center"> <a href="https://github.com/dxmlk">한성경</a></td>
   </tr>
+
   <tr>
     <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/a7aa5b88-7ff7-4bbf-9b3f-2d8667a18dcc" width="150px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
   </tr>
