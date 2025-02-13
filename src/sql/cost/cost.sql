@@ -200,3 +200,56 @@ AND
 	comment_id = @comment_id
 
 
+#### 8. 비용 히스토리 조회 ####
+SELECT
+	  cth.cost_name
+	, cth.cost_amount
+	, cth.history_type
+	, cth.updated_at
+	, cg.category_name
+	, wt.member_name
+	, pr.member_name
+FROM
+	tbl_cost_history cth
+JOIN
+	tbl_category cg
+ON
+	cth.category_id = cg.category_id
+JOIN
+	tbl_member wt
+ON
+	cth.writer_id = wt.member_id
+JOIN
+	tbl_member pr
+ON
+	cth.payer_id = pr.member_id
+WHERE
+	cost_id = @cost_id;
+	
+
+#### 9. 특정 비용 카테고리 조회 ####
+SELECT
+	  cth.cost_name
+	, cth.cost_amount
+	, cth.history_type
+	, cth.updated_at
+	, cg.category_name
+	, wt.member_name
+	, pr.member_name
+FROM
+	tbl_cost_history cth
+JOIN
+	tbl_category cg
+ON
+	cth.category_id = cg.category_id
+JOIN
+	tbl_member wt
+ON
+	cth.writer_id = wt.member_id
+JOIN
+	tbl_member pr
+ON
+	cth.payer_id = pr.member_id
+WHERE
+	cth.cost_id=@cost_id;
+
