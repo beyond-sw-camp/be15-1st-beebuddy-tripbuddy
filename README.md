@@ -12,12 +12,12 @@
     <td align="center"> <a href="https://github.com/dxmlk">한성경</a></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/c5ea1f98-b4c1-4d4a-a221-602fae97db86" width="150px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/a7aa5b88-7ff7-4bbf-9b3f-2d8667a18dcc" width="150px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/a16628c4-0cc1-4348-aed4-8f8ba9d611a0" width="150px"/></td>
   </tr>
 </table>
   <br>
@@ -92,67 +92,45 @@
 - 다목적 협업툴 - 노션
 : Notion과 같은 협업툴은 실시간 공동 작업 기능을 제공하지만, 일반적인 업무 및 프로젝트 관리에 초점이 맞춰져 있어 <b>여행 일정 기획에 특화되어 있지 않습니다.</b>
 
-#### [ 트립버디의 차별성 ]
+#### [ 트립버디의 차별성: 여행일정 + 협업 ] 
+<img src="https://github.com/user-attachments/assets/06a2a36a-5d2e-45cb-a85a-61e4d2428b74" width="400px"/> <br>
 기존의 여행 계획 수립 플랫폼들은 여행 일정 기획에 특화되어 있지 않거나, 협업 기능이 부족합니다. 트립버디는 이러한 시장의 빈틈을 보완하여, **여행 일정이라는 특정 주제를 중심으로 + 실시간 공동 작업이 가능한 플랫폼을 제공**합니다. 여행을 함께 계획하는 과정에서 발생하는 불편함을 최소화하고, 사용자들이 더욱 원활하게 협업할 수 있도록 지원합니다. 이를 통해, 개인 중심의 여행 계획 서비스를 넘어, **여행을 함께 준비하는 사람들을 위한 최적의 협업 도구로 자리 잡는 것**을 목표로 합니다.
-
 <br><br>
 ### <p id="1-3">1-3. 주요 기능</p>
-#### 🔐 회원 관리 및 알림 시스템 
-- 회원 가입 및 로그인 <br>
-  이메일 기반 회원 가입 및 로그인, 비밀번호 찾기 기능 제공
-- 개인 정보 관리<br>
-  사용자 정보 조회 및 수정 가능 (이름, 생년월일, 연락처, 알림 설정)
-- 알림 시스템<br>
-  그룹 초대, 투표 생성, 갤러리 공유 등 실시간 알림 제공 및 개별 설정 가능
-
-#### 📅 캘린더 및 일정 관리
-- 나의 캘린더<br>
-개인 일정과 내가 속한 그룹 일정 한 번에 조회<br>
-그룹 별 일정 필터링 기능 지원
-- 그룹 캘린더
-그룹원들의 개인 일정을 통합 조회 가능<br>
-여행 일정 조율을 위한 개인 캘린더 연동 지원
-- 개인 일정 관리
-개인 일정 등록, 수정, 삭제 기능 제공
-
-#### 👥 그룹 및 여행방 관리
+#### 📝 그룹 여행방 일정 보드
+- 여행 날짜, 여행지, 숙소, 교통 수단, 식당 등의 일정 리스트를 팀원들과 동시에 편집 가능
+- 등록된 일정 수정 및 삭제 가능
+- 여행 하루 전 일정 알림 기능 제공
+#### 📅 그룹 캘린더 기능
+- 그룹원들의 개별 일정을 반영한 최적의 여행 날짜 조율
+#### 🗳️ 투표 기능
+- 일정, 숙소 등 주요 결정을 손쉽게 투표로 결정
+- 완료된 투표 결과를 여행 일정에 반영
+#### 💰 예산 관리 및 정산 기능
+- 여행 전 항목 별 예산 설정 가능
+- 여행 중 발생한 비용을 금액, 날짜, 카테고리 등과 함께 기록
+- 비용 기록 히스토리 조회 가능 
+#### 📸 사진 공유 및 여행 기록 기능
+- 여행 후 사진을 공유하고 기록을 보관하여 활용
+- 여행 종료 시 자동 사진 공유 요청 알림 제공
+#### 🔔 회원 관리 및 알림 시스템
+- 회원 가입 및 개인 정보 관리 
+- 그룹 초대, 투표 생성, 갤러리 공유 등 실시간 알림 제공 및 개별 설정 가능
+#### 👥 그룹 및 여행방 관리 
 - 그룹 생성 및 초대
-  그룹을 생성하고, 다른 사용자를 초대하여 여행 그룹을 구성
-  그룹 초대 수락, 거절 가능
-- 그룹 캘린더
-  그룹원들의 일정 통합 조회 가능
-  그룹 일정과 개인 일정을 조율하는 기능 제공
-- 여행방 관리
-  하나의 그룹에서 여러 개의 여행방을 생성 가능 (ex. ‘강릉여행’, ‘제주여행’)
-  여행방 수정 및 삭제 가능
-
-#### [ 여행 일정 투표 및 관리 ]
-- 투표 시스템
-- 여행 세부 일정 관리
-- 투표 댓글 기능
-
-#### [ 갤러리 ]
-- 사진 및 영상 업로드
-- 사진 영상 관리
-- 사진 및 영상 댓글 기능
-
-#### [ 예산 및 비용 관리 ]
-- 예산 설정
-- 비용 관리
-- 비용 히스토리 조회회
-
+- 그룹 내 여러 개의 여행 방 생성 가능 
 <br><br>
 ### <p id="1-4">1-4. WBS(Work Breakdown Structure)</p>
-
+<a href="https://docs.google.com/spreadsheets/d/1g5JGdYRIqlfTwxo8pWvn_RjXfj637lqHXj-BadZo7cY/edit?gid=661890835#gid=661890835">WBS</a>
 <br><br>
 ### <p id="1-5">1-5. 요구사항 명세서</p>
+<a href="https://docs.google.com/spreadsheets/d/1g5JGdYRIqlfTwxo8pWvn_RjXfj637lqHXj-BadZo7cY/edit?gid=1875085029#gid=1875085029">요구사항 명세서</a>
 ![요구사항 명세서](https://github.com/user-attachments/assets/26c892a0-9ac2-4d60-bce0-e6bcd6eaf763)
 
 ### <p id="1-6">1-6. UML</p>
 ![image](https://github.com/user-attachments/assets/20d39e15-95e3-4734-9d13-e92b41ec5810)
 
 ## <p id="2">2. DB모델링</p>
-
 
 ### <p id="2-1">2-1. 논리 모델링</p>
 ![논리 모델](https://github.com/user-attachments/assets/ec1d504a-648d-44dc-a92a-577e6598d8ef)
@@ -169,7 +147,7 @@
 
 
 ## <p id="4">4. 테스트케이스 </p>
-
+<a href="https://docs.google.com/spreadsheets/d/1g5JGdYRIqlfTwxo8pWvn_RjXfj637lqHXj-BadZo7cY/edit?gid=2127407408#gid=2127407408">테스트 케이스</a>
 
 
 
