@@ -21,3 +21,7 @@ DELETE
   FROM tbl_member_notice
  WHERE member_id = 37 
    AND member_notice_id = 1; 
+
+-- 4. 회원 알림 등록 (cronjob 등에 의해 알림 발생 시 Insert)
+INSERT INTO tbl_member_notice (member_id, notice_id, notice_time, group_id)
+VALUES (37, 1, '2025-02-15 14:14:21', 7);
