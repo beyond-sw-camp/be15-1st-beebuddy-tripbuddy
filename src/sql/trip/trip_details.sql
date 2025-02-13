@@ -28,9 +28,7 @@ VALUES
 (5, 101, 2002, '미정 일정 논의', 2, NULL, 'Y'),
 (2, 3, 1, '하얏트 호텔', 4, 3, 'N');
 
-SELECT * FROM tbl_trip WHERE room_id = 1;
-SELECT * FROM tbl_category WHERE category_id = 1;
-
+-- 여행 일정 조회
 SELECT
     dt.detail_id,
     dt.room_id,
