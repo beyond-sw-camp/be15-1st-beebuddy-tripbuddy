@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS `tbl_trip_details`;
 DROP TABLE IF EXISTS `tbl_vote_option`;
 DROP TABLE IF EXISTS `tbl_vote`;
 DROP TABLE IF EXISTS `tbl_cost_comment`;
+DROP TABLE IF EXISTS `tbl_cost_split`;
 DROP TABLE IF EXISTS `tbl_cost_history`;
 DROP TABLE IF EXISTS `tbl_cost`;
 DROP TABLE IF EXISTS `tbl_budget_comment`;
@@ -34,11 +35,11 @@ INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
 -- 회원 테이블
 CREATE TABLE `tbl_member` (
 `member_id`	INT NOT NULL,
-`email`	CHAR(30)	NOT NULL	COMMENT '로그인 ID',
+`email`	CHAR(30)	NOT NULL UNIQUE	COMMENT '로그인 ID',
 `password`	VARCHAR(255)	NOT NULL	COMMENT '암호화된 비밀번호',
 `member_name`	VARCHAR(255)	NOT NULL	COMMENT '회원 이름',
 `birthday`	DATE	NOT NULL	COMMENT '회원 생년월일',
-`phone_number`	VARCHAR(30)	NOT NULL	COMMENT '회원 전화번호',
+`phone_number`	VARCHAR(30)	NOT NULL UNIQUE	COMMENT '회원 전화번호',
 `created_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP COMMENT'회원 가입일',
 `updated_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP 
  ON UPDATE CURRENT_TIMESTAMP COMMENT '회원정보 수정일',
@@ -187,28 +188,20 @@ REFERENCES `tbl_member` (
 );
 
 -- 비용 테이블
+
 CREATE TABLE `tbl_cost` (
-	`cost_id`	INT	NOT NULL COMMENT '비용 ID',
+	`cost_id`	INT	NOT NULL	COMMENT '비용 ID',
 	`cost_amount`	DECIMAL(10, 2)	NOT NULL	DEFAULT 0	COMMENT '비용 금액',
 	`cost_name`	VARCHAR(50)	NOT NULL	COMMENT '비용 제목',
-	`created_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP	ON UPDATE CURRENT_TIMESTAMP	COMMENT '등록 시간',
-	`cost_split_amount`	DECIMAL(10, 2)	NOT NULL	DEFAULT 0	COMMENT '개인 정산 금액',
+	`created_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '등록 시간',
 	`room_id`	INT	NOT NULL	COMMENT '여행방 ID',
 	`category_id`	INT	NOT NULL	COMMENT '카테고리 ID',
 	`writer_id`	INT	NOT NULL	COMMENT '최종 편집자',
-	`payer_id`	INT	NOT NULL	COMMENT '결제자 ID',
-	`cost_sharer_id`	INT	NOT NULL	COMMENT '정산 대상자 ID'
+	`payer_id`	INT	NOT NULL	COMMENT '결제자 ID'
 );
 
 ALTER TABLE `tbl_cost` MODIFY `cost_id` 
 INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
-
-ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_trip_TO_tbl_cost_1` FOREIGN KEY (
-	`room_id`
-)
-REFERENCES `tbl_trip` (
-	`room_id`
-);
 
 ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_category_TO_tbl_cost_1` FOREIGN KEY (
 	`category_id`
@@ -231,27 +224,25 @@ REFERENCES `tbl_member` (
 	`member_id`
 );
 
-ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_member_TO_tbl_cost_3` FOREIGN KEY (
-	`cost_sharer_id`
+ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_trip_TO_tbl_cost_1` FOREIGN KEY (
+	`room_id`
 )
-REFERENCES `tbl_member` (
-	`member_id`
+REFERENCES `tbl_trip` (
+	`room_id`
 );
 
-
 -- 비용 히스토리 테이블
+
 CREATE TABLE `tbl_cost_history` (
-	`cost_history_id`	INT	NOT NULL COMMENT '히스토리 ID',
+	`cost_history_id`	INT	NOT NULL	COMMENT '히스토리 ID',
 	`history_type`	ENUM('UPDATED', 'CREATED', 'DELETED')	NOT NULL	COMMENT '변경  유형',
-	`updated_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP	ON UPDATE CURRENT_TIMESTAMP	COMMENT '수정시간',
+	`updated_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '수정시간',
 	`cost_amount`	DECIMAL(10, 2)	NOT NULL	DEFAULT 0	COMMENT '비용 금액',
 	`cost_name`	VARCHAR(50)	NULL	COMMENT '비용 제목',
-	`cost_split_amount`	DECIMAL(10, 2)	NOT NULL	DEFAULT 0	COMMENT '개인 정산 금액',
 	`writer_id`	INT	NOT NULL	COMMENT '작성자 IUD',
 	`category_id`	INT	NOT NULL	COMMENT '카테고리 ID',
 	`payer_id`	INT	NOT NULL	COMMENT '결제자 ID',
 	`room_id`	INT	NOT NULL	COMMENT '여행방 ID',
-	`cost_sharer_id`	INT	NOT NULL	COMMENT '정산 대상자 ID',
 	`cost_id`	INT	NULL	COMMENT '비용 ID'
 );
 
@@ -267,13 +258,6 @@ REFERENCES `tbl_member` (
 
 ALTER TABLE `tbl_cost_history` ADD CONSTRAINT `FK_tbl_member_TO_tbl_cost_history_2` FOREIGN KEY (
 	`payer_id`
-)
-REFERENCES `tbl_member` (
-	`member_id`
-);
-
-ALTER TABLE `tbl_cost_history` ADD CONSTRAINT `FK_tbl_member_TO_tbl_cost_history_3` FOREIGN KEY (
-	`cost_sharer_id`
 )
 REFERENCES `tbl_member` (
 	`member_id`
@@ -301,13 +285,39 @@ REFERENCES `tbl_cost` (
 );
 
 
+-- 비용 정산 테이블 
+
+CREATE TABLE `tbl_cost_split` (
+	`cost_split_id`	INT	NOT NULL	COMMENT '비용 정산 ID',
+	`cost_sharer_id`	INT	NOT NULL	COMMENT '정산 대상자 ID',
+	`cost_id`	INT	NOT NULL	COMMENT '비용 ID',
+	`cost_split_amount`	DECIMAL(10, 2)	NOT NULL	DEFAULT 0	COMMENT '개인 정산 금액'
+);
+
+ALTER TABLE `tbl_cost_split` MODIFY `cost_split_id` 
+INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+
+ALTER TABLE `tbl_cost_split` ADD CONSTRAINT `FK_tbl_member_TO_tbl_cost_split_1` FOREIGN KEY (
+	`cost_sharer_id`
+)
+REFERENCES `tbl_member` (
+	`member_id`
+);
+
+ALTER TABLE `tbl_cost_split` ADD CONSTRAINT `FK_tbl_cost_TO_tbl_cost_split_1` FOREIGN KEY (
+	`cost_id`
+)
+REFERENCES `tbl_cost` (
+	`cost_id`
+) ON DELETE CASCADE;
+
+
 -- 비용 댓글 테이블
 CREATE TABLE `tbl_cost_comment` (
 	`comment_id`	INT	NOT NULL	COMMENT '댓글 ID',
 	`contents`	VARCHAR(200)	NOT NULL	COMMENT '댓글 내용',
 	`updated_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP	ON UPDATE CURRENT_TIMESTAMP	COMMENT '수정 시간',
 	`created_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP	COMMENT '작성 시간',
-	`is_deleted`	ENUM('Y', 'N')	NOT NULL	DEFAULT 'N'	COMMENT '삭제 여부',
 	`cost_id`	INT	NOT NULL	COMMENT '비용 ID',
 	`member_id`	INT	NOT NULL	COMMENT '회원 ID'
 );
@@ -320,7 +330,7 @@ ALTER TABLE `tbl_cost_comment` ADD CONSTRAINT `FK_tbl_cost_TO_tbl_cost_comment_1
 )
 REFERENCES `tbl_cost` (
 	`cost_id`
-);
+) ON DELETE CASCADE;
 
 ALTER TABLE `tbl_cost_comment` ADD CONSTRAINT `FK_tbl_member_TO_tbl_cost_comment_1` FOREIGN KEY (
 	`member_id`
