@@ -2,7 +2,7 @@
 SET @member_id = 2;
 
 
-SELECT gmb.group_id
+SELECT gr.group_name
 FROM tbl_group_member gmb
 JOIN tbl_group gr ON gmb.group_id = gr.group_id
 JOIN tbl_member mb ON mb.member_id = gmb.member_id
@@ -16,12 +16,26 @@ SET @group_name = '그룹이름';
 SET @member_id = 2;
 
 
+SET @member_is_deleted =
+  (SELECT mb.is_deleted
+   FROM tbl_member mb
+   WHERE mb.member_id = @member_id);
+
+
 INSERT INTO tbl_group(group_name, created_at)
-VALUES (@group_name, DEFAULT);
+SELECT @group_name,
+       CURRENT_TIMESTAMP
+FROM DUAL
+WHERE @member_is_deleted = 'N';
 
 
 INSERT INTO tbl_group_member(group_id, member_id, role_id, invite_accepted)
-VALUES (LAST_INSERT_ID(), @member_id, 1, 'Y');
+SELECT LAST_INSERT_ID(),
+       @member_id,
+       1,
+       'Y'
+FROM DUAL
+WHERE @member_is_deleted = 'N';
 
 -- 3. 그룹 이름 수정
 SET @group_id = 5;
@@ -59,16 +73,20 @@ SET @group_id = 47;
 SET @invitor_id = 3;
 
 
-SELECT COUNT(*)
-FROM tbl_member mb
-JOIN tbl_group_member gmb ON mb.member_id = gmb.member_id
-JOIN tbl_group gr ON gmb.group_id = gr.group_id
-WHERE gmb.member_id = @invitor_id
-  AND gmb.group_id = @group_id; -- 초대자가 해당 그룹의 멤버인지 체크
-
-
 INSERT INTO tbl_group_member(group_id, member_id, role_id, invite_accepted)
-VALUES (@group_id, @member_id, 2, 'N'); -- 위의 COUNT(*) 결과가 1일 때 수행
+SELECT @group_id,
+       @member_id,
+       2,
+       'N'
+FROM DUAL
+WHERE
+    (SELECT COUNT(*)
+     FROM tbl_member mb
+     JOIN tbl_group_member gmb ON mb.member_id = gmb.member_id
+     JOIN tbl_group gr ON gmb.group_id = gr.group_id
+     WHERE gmb.member_id = @invitor_id
+       AND gmb.group_id = @group_id) = 1; -- 초대자가 해당 그룹의 멤버인지 체크
+-- COUNT(*) 결과가 1일 때 수행
 
 -- 5. 그룹 초대 수락/거절
 -- 그룹 초대 수락
