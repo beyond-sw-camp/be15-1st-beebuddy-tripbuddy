@@ -7,15 +7,19 @@ CALL proc_isMemberInGroup(@member_id, @group_id); -- 그룹에 속한지 확인
 
 #### 5. 예산 댓글 조회 ####
 SELECT
-	comment_id
-	, contents
-	, created_at
-	, updated_at
-	, writer_id
+	bgc.comment_id
+	, bgc.contents
+	, bgc.created_at
+	, bgc.updated_at
+	, mem.member_name
 FROM
-	tbl_budget_comment
+	tbl_budget_comment bgc
+JOIN
+	tbl_member mem
+ON
+	bgc.writer_id=mem.member_id
 WHERE
-	comment_id = @comment_id;
+	bgc.budget_id = @budget_id;
 
 
 #### 6. 예산 댓글 수정 ####
