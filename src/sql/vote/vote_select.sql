@@ -17,7 +17,7 @@ AND is_deleted='N' -- 해당 여행방 내 투표 전체 조회
 -- AND category_id = 1; -- 특정 카테고리의 투표만 조회 
 
 -- 3-2. 투표 상세 조회 
--- 3-2-1) 투표 조회 
+-- 3-2-1. 투표 조회 
 SELECT vt.vote_id, 
 	vt.vote_name, 
 	vt.startdate, 
@@ -37,14 +37,14 @@ FROM tbl_vote vt
 WHERE vt.vote_id = 1
 AND vt.is_deleted = 'N'; 
 
--- 3-2-2) 투표 항목 조회 
+-- 3-2-2. 투표 항목 조회 
 SELECT vto.option_id, 
 	vto.option_name
 FROM tbl_vote_option vto 
 WHERE vto.vote_id = 1
 AND vto.is_deleted = 'N';
  
--- 3-2-3) 투표 항목 카운트 조회  
+-- 3-2-3. 투표 항목 카운트 조회  
 SELECT vth.option_id, COUNT(vth.option_id) AS OPTION_CNT
 FROM tbl_vote_history vth
 LEFT JOIN tbl_vote_option vto 
@@ -53,7 +53,7 @@ AND  vto.vote_id = 1
 AND vto.is_deleted = 'N'
 GROUP BY vth.option_id; 
 
--- 3-2-4) 투표 댓글 조회 
+-- 3-2-4. 투표 댓글 조회 
 SELECT vtc.cmt_id,
 vtc.contents,
 vtc.creator_id,

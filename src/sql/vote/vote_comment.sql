@@ -1,4 +1,4 @@
--- 6. 투표 댓글 
+-- 6. 투표 댓글
 -- 6-1. 투표 댓글 작성
 INSERT INTO tbl_vote_comment (CONTENTS, vote_id, creator_id)
 VALUES ('난 이틀 다 되는데', 1, 1),
