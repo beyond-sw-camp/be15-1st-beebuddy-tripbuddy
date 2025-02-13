@@ -169,6 +169,8 @@
 
 
 ## <p id="4">4. 테스트케이스 </p>
+[테스트케이스](https://docs.google.com/spreadsheets/d/1QRd2XA-3SaPd8fHA2NCjy8_Xh_2T9ZUe7HLELneNZ48/edit?usp=sharing)  
+![beebuddy 테스트 케이스](https://github.com/user-attachments/assets/aa9ba96c-eb10-4040-8940-add43f311140)
 
 
 ## <p id="5">5. 트러블슈팅</p>
@@ -335,7 +337,7 @@ fatal: unable to access 'https://github.com/beebuddy1/be15-1st-beebuddy-tripbudd
 
 #### 4️⃣ 해결 방법 
 ##### 1. 기존에 저장된 GitHub 자격증명을 삭제한다. 
-![title](https://file.notion.so/f/f/b6e6d6ac-0344-42e3-9042-f849cbb04445/b0439d13-38d0-48d2-89e4-d2e9139ad2eb/image.png?table=block&id=19917a66-2227-80da-b260-d810c95dc432&spaceId=b6e6d6ac-0344-42e3-9042-f849cbb04445&expirationTimestamp=1739476800000&signature=i1Bvowcunqn2BcPEpr8qUE-3mDgnrE-zh2VtihC46nk&downloadName=image.png)   
+![permission_error](https://github.com/user-attachments/assets/03200652-9cdd-4904-b218-2b752c02e6be)
 ##### ✔️ 로컬 컴퓨터 윈도우-사용자계정-자격증명 관리자에서  기존의 깃허브와 관련된 자격증명 모두 삭제
 
 <br>
@@ -349,9 +351,10 @@ fatal: unable to access 'https://github.com/beebuddy1/be15-1st-beebuddy-tripbudd
 );
 ```
 
- #### 2️⃣ SQL 에러 코드
+#### 2️⃣ SQL 에러 코드
  > 프로젝트 테이블 생성을 위한 DDL 스크립트를 읽혔으나 테이블이 정상적으로 생성되지 않아doesn't exist 에러 발생 
-![title](https://file.notion.so/f/f/b6e6d6ac-0344-42e3-9042-f849cbb04445/5ae4b221-4472-4d39-871e-bbd7bf9f80f1/image.png?table=block&id=19917a66-2227-804c-8256-f053d30f8834&spaceId=b6e6d6ac-0344-42e3-9042-f849cbb04445&expirationTimestamp=1739476800000&signature=XppS26v4-57zTvm4Ha8_S51yf4l2kblUX-5ZBJSy15E&downloadName=image.png)   
+![replica_error](https://github.com/user-attachments/assets/89782cdb-a491-414a-828b-8ffca925d4b2)
+
 
 #### 3️⃣ 발생 원인 
 - ##### 리눅스 환경에서 위의 SQL 코드의 Tab 처리를 인식하지 못하여 공백이 없는 채로 명령어를 읽음 (예시: CHAR(30)NOT NULL)
@@ -368,6 +371,7 @@ ALTER TABLE `tbl_member` ADD CONSTRAINT `PK_TBL_MEMBER` PRIMARY KEY (
   `member_id`
 );
 ```
+![replica_success](https://github.com/user-attachments/assets/298c01d4-878c-45d4-9803-51eb4aa5dce2)
 
 <br>
 
