@@ -348,7 +348,8 @@ CREATE TABLE `tbl_vote` (
 	`room_id`	INT	NOT NULL,
 	`creator_id`	INT	NOT NULL,
 	`category_id`	INT	NOT NULL,
-	`selected_opts_num`	INT	NOT NULL
+	`selected_opts_num`	INT	NOT NULL,
+	`is_closed`	ENUM('Y', 'N')	NOT NULL	DEFAULT 'N'
 );
 
 ALTER TABLE `tbl_vote` MODIFY `vote_id` 
