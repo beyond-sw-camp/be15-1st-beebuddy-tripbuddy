@@ -1,4 +1,9 @@
 -- 비용 DML
+-- TODO
+-- 비용 생성 트리거
+-- 비용 수정 트리거
+-- 비용 삭제 트리거
+
 
 #### 백엔드로부터 받은 내용 ######
 SET @budget_id = 1;
@@ -114,7 +119,6 @@ JOIN tbl_member pr
 WHERE ct.room_id = @room_id
 ORDER BY ct.updated_at ASC;
 #### 2. 예산 작성 ####
-
 INSERT INTO
 	tbl_budget(budget_name, budget_amount, room_id, writer_id, category_id)
 VALUES(
@@ -126,29 +130,31 @@ VALUES(
 );
 
 
-#### 3. 예산 수정 ####
--- 예산 수정 시, 작성자가 최종 수정자로 변경됨!
+#### 3. 비용 수정 ####
+--  비용 수정 시, 작성자가 최종 수정자로 변경됨!
+--  비용 수정 시, 비용 히스토리 테이블에 똑같은 내용 추가되는 트리거 개발 필요!
+
 UPDATE
-	tbl_budget
+	tbl_cost
 SET
-	  budget_name = @budget_name2
-	, budget_amount = @budget_amount2
-	, room_id	= @room_id
+	  cost_name = @cost_name2
+	, cost_amount = @cost_amount2
 	, writer_id = @member_id2
+	, category_id = @category_id
+	, payeer = @payyer_id
 WHERE
-	budget_id = @budget_id;
+	cost_id = @cost_id;
 	
 
 
 #### 4. 예산 삭제 ####
--- 예산 삭제 시, 댓글들 is deleted 'N'으로 바꾸는 트리거 필요함!
 
 -- (1) 선택 삭제
 DELETE
 FROM
-	tbl_budget
+	tbl_cost
 WHERE
-	budget_id = @budget_id;
+	cost_id = @cost_id;
 	
 -- (2) 모두 삭제
 DELETE
@@ -158,7 +164,36 @@ WHERE
 	1=1;
 
 #### 5. 예산 댓글 조회 ####
+SELECT
+	ctc.comment_id
+	, ctc.contents
+	, ctc.created_at
+	, ctc.updated_at
+	, mem.member_name
+FROM
+	tbl_cost_comment ctc
+JOIN
+	tbl_member mem
+ON
+	ctc.member_id = mem.member_id
 
 #### 6. 예산 댓글 수정 ####
+UPDATE
+	tbl_cost_comment
+SET
+	contents = @contents
+WHERE
+	member_id = @member_id
+
+
 
 #### 7. 예산 댓글 삭제 ####
+DELETE
+FROM
+	tbl_cost_comment
+WHERE
+	member_id = @member_id
+AND
+	comment_id = @comment_id
+
+
