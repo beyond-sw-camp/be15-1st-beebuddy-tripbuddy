@@ -1,8 +1,8 @@
 -- 갤러리 댓글 조회
-SET @file_id = 1;
+SET @file_id = 2;
 SELECT
     galc.comment_id,
-    galc.comment_content,
+    galc.contents,
     galc.created_at,
     galc.updated_at,
     galc.is_deleted,
@@ -14,15 +14,15 @@ FROM
 JOIN
     tbl_member mem ON galc.member_id = mem.member_id
 WHERE
-    galc.file_id = @file_id;
+    galc.file_id = @file_id
     AND galc.is_deleted = 'N' 
 ORDER BY 
     galc.created_at ASC; 
 
 -- 갤러리 댓글 등록
 SET @file_id = 2;
-SET @member_id = 1;
-SET @contents = '새로운 댓글 내용';
+SET @member_id = 89;
+SET @contents = '잘못 닮닮';
 
 INSERT INTO tbl_photo_comment (
     contents, 
@@ -35,9 +35,9 @@ INSERT INTO tbl_photo_comment (
 );
 
 -- 갤러리 댓글 수정
-SET @file_id = 1;
-SET @member_id = 1;
-SET @contents = '수정된 댓글 내용';
+SET @file_id = 2;
+SET @member_id = 89;
+SET @contents = '수정한 댓글';
 
 UPDATE tbl_photo_comment
 SET
@@ -48,12 +48,12 @@ WHERE
     AND member_id = @member_id;
 
 -- 갤러리 댓글 삭제
-SET @file_id = 1;
-SET @member_id = 1;
+SET @comment_id = 3;
+SET @member_id = 89;
 
 UPDATE tbl_photo_comment
 SET
     is_deleted = 'Y'
 WHERE
-    file_id = @file_id
+    comment_id = @comment_id
     AND member_id = @member_id;
