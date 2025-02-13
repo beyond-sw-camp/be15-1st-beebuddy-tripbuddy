@@ -1,7 +1,3 @@
-
-![image](https://github.com/user-attachments/assets/7c64846b-fc61-4581-85c9-c28bae363c5e)
-
-
 ## 🧳 트립버디 - 협업 기반 여행 계획 서비스
 
 <a href="#1">1. 프로젝트 기획</a>
@@ -38,7 +34,6 @@
 
 <a href="#5">5. 트러블슈팅 </a>
 
----
 <table style="width: 100%; text-align: center;">
   <tr>
     <td align="center"> <a href="https://github.com/mijuckboon">곽진웅</a></td>
