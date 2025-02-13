@@ -171,6 +171,269 @@
 ## <p id="4">4. 테스트케이스 </p>
 
 
+## <p id="5">5. 트러블슈팅</p>
+
+### PK 지정 전 AUTO_INCREMENT Error
+#### 1️⃣ 에러 발생 코드
+``` sql
+ CREATE TABLE `tbl_member` (
+  `member_id`  INT NOT NULL AUTO_INCREMENT, -- ⚠️ 에러 발생
+  `email`  CHAR(30)  NOT NULL  COMMENT '로그인 ID'
+);
+
+ALTER TABLE `tbl_member` ADD CONSTRAINT `PK_TBL_MEMBER` PRIMARY KEY (
+  `member_id`
+);
+```
+ #### 2️⃣ SQL 에러 코드
+ > SQL 오류 (1075): **Incorrect table definition**; 
+    there can be only one auto column and it must be defined as a key 
+
+#### 3️⃣ 발생 원인 
+-  <span style="background-color:fff5b1;">one auto column and it must be defined as a key </span>
+- `AUTO_INCREMENT` 를 적용할 컬럼은 KEY로 지정된 상태여야 한다.
+
+#### 4️⃣ 해결 방법 
+##### 1. PK를 인라인 방식으로 통일한다.
+``` sql
+CREATE TABLE `tbl_member` (
+`member_id`   INT NOT NULL AUTO_INCREMENT PRIMARY KEY, -- 인라인 방식으로 해결
+`email`   CHAR(30)   NOT NULL   COMMENT '로그인 ID',
+);
+```
+##### 2. ALTER 문으로 통일한다. 
+``` sql
+CREATE TABLE `tbl_member` (
+`member_id`   INT NOT NULL AUTO_INCREMENT PRIMARY KEY, -- 인라인 방식으로 해결
+`email`   CHAR(30)   NOT NULL   COMMENT '로그인 ID',
+);
+
+# ALTER문으로 AUTO_INCREMENT, PRIMARY KEY 지정
+ALTER TABLE `tbl_member` MODIFY member_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+```
+
+<br>
+
+### ALTER로 ON UPDATE CASCADE ON DELETE CASCADE 지정 Error
+#### 1️⃣ 에러 발생 코드
+``` sql
+ALTER TABLE `tbl_group_member` ADD CONSTRAINT `FK_tbl_group_TO_tbl_group_member_1` 
+FOREIGN KEY (
+   `group_id`
+)
+REFERENCES `tbl_group` (
+   `group_id` ON UPDATE CASCADE ON DELETE CASCADE
+) ;
+```
+ #### 2️⃣ SQL 에러 코드
+ > SQL 오류 (1064): **You have an error in your SQL syntax**; 
+check the menual that corresponds to your MariaDB server version for the right syntax
+to use near 'ON UPDATE CASCADE ON DELETE CASCADE)' 
+
+#### 3️⃣ 발생 원인 
+- <span style="background-color:fff5b1;">check the menual that corresponds to your MariaDB server version for the right syntax
+to use near 'ON UPDATE CASCADE ON DELETE CASCADE)’ </span>
+- `ALTER`로 `ON UPDATE CASCADE ON DELETE CASCADE`  와 같은 CSCADE 옵션 지정 시 참조 컬럼의 괄호 밖에 명시해주어야 한다. 
+
+#### 4️⃣ 해결 방법 
+##### 1. CASCADE 옵션을 참조 컬럼 괄호 밖에 명시한다.
+``` sql
+ALTER TABLE `tbl_group_member` ADD CONSTRAINT `FK_tbl_group_TO_tbl_group_member_1` 
+FOREIGN KEY (
+   `group_id`
+)
+REFERENCES `tbl_group` (
+   `group_id`   
+) ON UPDATE CASCADE ON DELETE CASCADE ;
+```
+
+<br>
+
+### TRIGGER AFTER DELETE 옵션 NEW 사용 불가
+#### 1️⃣ 에러 발생 코드
+``` sql
+DELIMITER ;
+-- 비용 삭제 트리거
+CREATE OR REPLACE TRIGGER after_delete_cost
+   AFTER DELETE
+   ON tbl_cost
+   FOR EACH ROW
+BEGIN
+   INSERT INTO
+      tbl_cost_history
+   (
+      history_type
+      , updated_at
+      , cost_amount
+      , cost_id
+   )
+   VALUES
+   (
+      'DELETED'
+      , NEW.created_at -- ⚠️ ON DELETE 옵션에서 NEW 사용하여 문제 발생
+      , NEW.cost_amount
+      , NULL -- cost_id null로 바꿔줌!
+   );   
+END //
+
+DELIMITER ;
+```
+ #### 2️⃣ SQL 에러 코드
+ > SQL 오류 (1363): There is no NEW row in on DELETE trigger' 
+
+#### 3️⃣ 발생 원인 
+-  `TRIGGER` ~ `[AFTER/BEFORE] DELETE` 옵션에서 `NEW` 사용
+- `DELETE` 옵션은 추가 데이터가 없어 `NEW` 사용 불가
+
+#### 4️⃣ 해결 방법 
+##### 1.  `NEW`를 제외하 작성한다.
+``` sql
+DELIMITER ;
+-- 비용 삭제 트리거
+CREATE OR REPLACE TRIGGER after_delete_cost
+   AFTER DELETE
+   ON tbl_cost
+   FOR EACH ROW
+BEGIN
+   INSERT INTO
+      tbl_cost_history
+   (
+      history_type
+      , updated_at
+      , cost_amount
+      , cost_id
+   )
+   VALUES
+   (
+      'DELETED'
+      , created_at
+      , cost_amount
+      , NULL -- cost_id null로 바꿔줌!
+   );
+END //
+
+DELIMITER ;
+```
+
+<br>
+
+### Organization Repository에 push시 Permission 에러
+#### 1️⃣ 에러 발생 상황
+- ##### Organization Repository를 Local에 `clone` 한 후 `branch` 생성
+- ##### 생성한 `branch`에서 파일을 수정하여 `commit` 하고 원격에 `push`
+
+#### 2️⃣ 에러 코드
+ > $ git push origin feat/vote   
+→ **Permission** to beebuddy1/be15-1st-beebuddy-tripbuddy.git **denied** to hnjee.
+fatal: unable to access 'https://github.com/beebuddy1/be15-1st-beebuddy-tripbuddy.git/': The requested URL returned error: 403
+
+#### 3️⃣ 발생 원인 
+- ##### GitHub Repository에 권한이 잘못 설정되었을 경우 (  repository 권한 부재 OR `Branch protection rules`에 `Require pull request before merging` 옵션 설정 )
+- ##### GitHub 계정 오류
+- ##### <span style="background-color:fff5b1;"> **현재 로컬에 연결된 GitHub 인증 정보 오류**</span>
+- ##### -> GitHub 계정 인증 정보에 조직 정보가 아닌 개인 인증 정보만 존재 
+
+#### 4️⃣ 해결 방법 
+##### 1. 기존에 저장된 GitHub 자격증명을 삭제한다. 
+![title](https://file.notion.so/f/f/b6e6d6ac-0344-42e3-9042-f849cbb04445/b0439d13-38d0-48d2-89e4-d2e9139ad2eb/image.png?table=block&id=19917a66-2227-80da-b260-d810c95dc432&spaceId=b6e6d6ac-0344-42e3-9042-f849cbb04445&expirationTimestamp=1739476800000&signature=i1Bvowcunqn2BcPEpr8qUE-3mDgnrE-zh2VtihC46nk&downloadName=image.png)   
+##### ✔️ 로컬 컴퓨터 윈도우-사용자계정-자격증명 관리자에서  기존의 깃허브와 관련된 자격증명 모두 삭제
+
+<br>
+
+### 레플리카 서버 구축 시 테이블 생성 오류
+#### 1️⃣ 에러 발생 상황
+``` sql
+ CREATE TABLE `tbl_member` (
+  `member_id`  INT  NOT  NULL  AUTO_INCREMENT, 
+  `email`   CHAR(30)   NOT  NULL   COMMENT  '로그인 ID'
+);
+```
+
+ #### 2️⃣ SQL 에러 코드
+ > 프로젝트 테이블 생성을 위한 DDL 스크립트를 읽혔으나 테이블이 정상적으로 생성되지 않아doesn't exist 에러 발생 
+![title](https://file.notion.so/f/f/b6e6d6ac-0344-42e3-9042-f849cbb04445/5ae4b221-4472-4d39-871e-bbd7bf9f80f1/image.png?table=block&id=19917a66-2227-804c-8256-f053d30f8834&spaceId=b6e6d6ac-0344-42e3-9042-f849cbb04445&expirationTimestamp=1739476800000&signature=XppS26v4-57zTvm4Ha8_S51yf4l2kblUX-5ZBJSy15E&downloadName=image.png)   
+
+#### 3️⃣ 발생 원인 
+- ##### 리눅스 환경에서 위의 SQL 코드의 Tab 처리를 인식하지 못하여 공백이 없는 채로 명령어를 읽음 (예시: CHAR(30)NOT NULL)
+
+#### 4️⃣ 해결 방법 
+##### 1. `TAB` 을 `space_bar`로 공백 설정하여 스크립트를 수정한다. 
+``` sql
+ CREATE TABLE `tbl_member` (
+  `member_id`  INT NOT NULL AUTO_INCREMENT, -- ⚠️ 에러 발생
+  `email`  CHAR(30)  NOT NULL  COMMENT '로그인 ID'
+);
+
+ALTER TABLE `tbl_member` ADD CONSTRAINT `PK_TBL_MEMBER` PRIMARY KEY (
+  `member_id`
+);
+```
+
+<br>
+
+### MariaDB doesn’t support variable for offset
+#### 1️⃣ 에러 발생 상황
+``` sql
+SET @room_id = 10;
+set @page = 1;
+SET @offset = (@page - 1) * 12;
+SELECT
+    gal.file_id,
+    gal.file_name,
+    gal.file_path,
+    gal.created_at,
+    gal.is_deleted,
+    gal.room_id
+FROM
+    tbl_gallery gal
+WHERE
+    gal.room_id = @room_id
+    AND gal.is_deleted = 'N'
+ORDER BY
+    gal.created_at DESC
+LIMIT 12 OFFSET @offset;
+```
+
+ #### 2️⃣ SQL 에러 코드
+``` sql
+Error: (conn:57, no: 1064, SQLState: 42000) You have an error in your SQL syntax;
+check the manual that corresponds to your MariaDB server version for the right syntax 
+to use near '@offset' at line 15 sql: SELECT gal.file_id, gal.file_name, gal.file_path,
+gal.created_at, gal.is_deleted, gal.room_id FROM tbl_gallery gal WHERE gal.room_id =
+@room_id AND gal.is_deleted = 'N' ORDER BY gal.created_at DESC L... - parameters:[]   
+```
+
+#### 3️⃣ 발생 원인 
+- ##### 갤러리의 한 페이지당 12개의 사진을 보여주기 위해서 @page를 입력 받고 @offset을 계산하여 OFFSET에 추가함.
+- ##### ❗ mariaDB에서는 OFFSET에 변수를 허용하지 않음.
+
+#### 4️⃣ 해결 방법 
+##### 1. PREPARE 문을 사용한다.
+``` sql
+SET @room_id = 10;
+SET @page = 1;
+SET @offset = (@page - 1) * 12;
+-- @sql_query라는 변수에 실행시키고자 했던 SQL 문을 문자열 형태로 저장
+SET @sql_query = CONCAT(
+    'SELECT file_id, file_name, file_path, created_at, is_deleted, room_id ',
+    'FROM tbl_gallery ',
+    'WHERE room_id = ', @room_id,
+    ' AND is_deleted = ''N'' ',
+    'ORDER BY created_at DESC ',
+    'LIMIT 12 OFFSET ', @offset
+);
+-- PREPARE 문으로 @sql_query를 불러오고, EXCUTE로 실행.
+PREPARE stmt FROM @sql_query;
+EXECUTE stmt;
+-- DEALLOCATE PREPARE로 사용이 끝난 SQL을 삭제하여 메모리 정리.
+DEALLOCATE PREPARE stmt;
+```
+
+<br>
+
+
+
+
 
 
 ## <p id="5">5. 트러블슈팅</p>
