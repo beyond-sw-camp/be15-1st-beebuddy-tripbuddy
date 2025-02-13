@@ -35,8 +35,8 @@ INSERT INTO tbl_photo_comment (
 );
 
 -- 갤러리 댓글 수정
-SET @file_id = 2;
-SET @member_id = 89;
+SET @comment_id = 2;
+SET @member_id = 13;
 SET @contents = '수정한 댓글';
 
 UPDATE tbl_photo_comment
@@ -44,7 +44,7 @@ SET
     contents = @contents, 
     updated_at = NOW()
 WHERE
-    file_id = @file_id
+    comment_id = @comment_id
     AND member_id = @member_id;
 
 -- 갤러리 댓글 삭제
