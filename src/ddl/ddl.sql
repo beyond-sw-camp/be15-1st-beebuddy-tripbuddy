@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS `tbl_trip_details`;
 DROP TABLE IF EXISTS `tbl_vote_option`;
 DROP TABLE IF EXISTS `tbl_vote`;
 DROP TABLE IF EXISTS `tbl_cost_comment`;
+DROP TABLE IF EXISTS `tbl_cost_split`;
 DROP TABLE IF EXISTS `tbl_cost_history`;
 DROP TABLE IF EXISTS `tbl_cost`;
 DROP TABLE IF EXISTS `tbl_budget_comment`;
@@ -196,11 +197,32 @@ CREATE TABLE `tbl_cost` (
 	`room_id`	INT	NOT NULL	COMMENT '여행방 ID',
 	`category_id`	INT	NOT NULL	COMMENT '카테고리 ID',
 	`writer_id`	INT	NOT NULL	COMMENT '최종 편집자',
-	`payeer_id`	INT	NOT NULL	COMMENT '결제자 ID'
+	`payer_id`	INT	NOT NULL	COMMENT '결제자 ID'
 );
 
 ALTER TABLE `tbl_cost` MODIFY `cost_id` 
 INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+
+ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_category_TO_tbl_cost_1` FOREIGN KEY (
+	`category_id`
+)
+REFERENCES `tbl_category` (
+	`category_id`
+);
+
+ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_member_TO_tbl_cost_1` FOREIGN KEY (
+	`writer_id`
+)
+REFERENCES `tbl_member` (
+	`member_id`
+);
+
+ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_member_TO_tbl_cost_2` FOREIGN KEY (
+	`payer_id`
+)
+REFERENCES `tbl_member` (
+	`member_id`
+);
 
 ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_trip_TO_tbl_cost_1` FOREIGN KEY (
 	`room_id`
@@ -263,27 +285,6 @@ REFERENCES `tbl_cost` (
 );
 
 
-ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_category_TO_tbl_cost_1` FOREIGN KEY (
-	`category_id`
-)
-REFERENCES `tbl_category` (
-	`category_id`
-);
-
-ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_member_TO_tbl_cost_1` FOREIGN KEY (
-	`writer_id`
-)
-REFERENCES `tbl_member` (
-	`member_id`
-);
-
-ALTER TABLE `tbl_cost` ADD CONSTRAINT `FK_tbl_member_TO_tbl_cost_2` FOREIGN KEY (
-	`payeer_id`
-)
-REFERENCES `tbl_member` (
-	`member_id`
-);
-
 -- 비용 정산 테이블 
 
 CREATE TABLE `tbl_cost_split` (
@@ -293,7 +294,7 @@ CREATE TABLE `tbl_cost_split` (
 	`cost_split_amount`	DECIMAL(10, 2)	NOT NULL	DEFAULT 0	COMMENT '개인 정산 금액'
 );
 
-ALTER TABLE `tbl_cost_comment` MODIFY `cost_split_id` 
+ALTER TABLE `tbl_cost_split` MODIFY `cost_split_id` 
 INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
 
 ALTER TABLE `tbl_cost_split` ADD CONSTRAINT `FK_tbl_member_TO_tbl_cost_split_1` FOREIGN KEY (
