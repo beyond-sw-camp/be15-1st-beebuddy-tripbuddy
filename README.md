@@ -136,7 +136,9 @@
 ### <p id="1-6">1-6. UML</p>
 <details>
 <summary>UML</summary>
-  ![tripbuddy_usecase](https://github.com/user-attachments/assets/d586a9a4-25ba-422a-8629-2f468a7b322c)
+<div markdown="1">
+  <img src="https://github.com/user-attachments/assets/4602be7a-f881-40e4-9851-305c59b52de8"/>  
+</div>
 </details>
 <br><br>
 
