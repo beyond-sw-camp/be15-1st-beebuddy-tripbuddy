@@ -215,8 +215,8 @@ ALTER TABLE `tbl_member` ADD CONSTRAINT `PK_TBL_MEMBER` PRIMARY KEY (
     there can be only one auto column and it must be defined as a key 
 
 #### 3️⃣ 발생 원인 
--  <span style="background-color:fff5b1;">one auto column and it must be defined as a key </span>
-- `AUTO_INCREMENT` 를 적용할 컬럼은 KEY로 지정된 상태여야 한다.
+-  ##### <span style="background-color:fff5b1;">one auto column and it must be defined as a key </span>
+- ##### `AUTO_INCREMENT` 를 적용할 컬럼은 KEY로 지정된 상태여야 한다.
 
 #### 4️⃣ 해결 방법 
 ##### 1. PK를 인라인 방식으로 통일한다.
@@ -256,9 +256,8 @@ check the menual that corresponds to your MariaDB server version for the right s
 to use near 'ON UPDATE CASCADE ON DELETE CASCADE)' 
 
 #### 3️⃣ 발생 원인 
-- <span style="background-color:fff5b1;">check the menual that corresponds to your MariaDB server version for the right syntax
-to use near 'ON UPDATE CASCADE ON DELETE CASCADE)’ </span>
-- `ALTER`로 `ON UPDATE CASCADE ON DELETE CASCADE`  와 같은 CSCADE 옵션 지정 시 참조 컬럼의 괄호 밖에 명시해주어야 한다. 
+-  ##### <span style="background-color:fff5b1;">check the menual that corresponds to your MariaDB server version for the right syntax to use near 'ON UPDATE CASCADE ON DELETE CASCADE)’ </span>
+-  ##### `ALTER`로 `ON UPDATE CASCADE ON DELETE CASCADE`  와 같은 CSCADE 옵션 지정 시 참조 컬럼의 괄호 밖에 명시해주어야 한다. 
 
 #### 4️⃣ 해결 방법 
 ##### 1. CASCADE 옵션을 참조 컬럼 괄호 밖에 명시한다.
@@ -307,8 +306,8 @@ DELIMITER ;
  > SQL 오류 (1363): There is no NEW row in on DELETE trigger' 
 
 #### 3️⃣ 발생 원인 
--  `TRIGGER` ~ `[AFTER/BEFORE] DELETE` 옵션에서 `NEW` 사용
-- `DELETE` 옵션은 추가 데이터가 없어 `NEW` 사용 불가
+-  ##### `TRIGGER` ~ `[AFTER/BEFORE] DELETE` 옵션에서 `NEW` 사용
+-  ##### `DELETE` 옵션은 추가 데이터가 없어 `NEW` 사용 불가
 
 #### 4️⃣ 해결 방법 
 ##### 1.  `NEW`를 제외하고 작성한다.
