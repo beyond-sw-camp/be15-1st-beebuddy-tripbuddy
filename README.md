@@ -374,7 +374,7 @@ fatal: unable to access 'https://github.com/beebuddy1/be15-1st-beebuddy-tripbudd
 ```
 
 #### 2️⃣ SQL 에러 코드
- > 프로젝트 테이블 생성을 위한 DDL 스크립트를 읽혔으나 테이블이 정상적으로 생성되지 않아doesn't exist 에러 발생 
+ > 프로젝트 테이블 생성을 위한 DDL 스크립트를 읽혔으나 테이블이 정상적으로 생성되지 않아 doesn't exist 에러 발생 
 ![replica_error](https://github.com/user-attachments/assets/89782cdb-a491-414a-828b-8ffca925d4b2)
 
 
