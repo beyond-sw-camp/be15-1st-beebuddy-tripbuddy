@@ -12,12 +12,12 @@
     <td align="center"> <a href="https://github.com/dxmlk">한성경</a></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/user-attachments/assets/c5ea1f98-b4c1-4d4a-a221-602fae97db86" width="150px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/a7aa5b88-7ff7-4bbf-9b3f-2d8667a18dcc" width="150px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/a16628c4-0cc1-4348-aed4-8f8ba9d611a0" width="150px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/c5ea1f98-b4c1-4d4a-a221-602fae97db86" width="150px" height="150px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/82943f25-208e-4ab7-9245-6ffe9662cea2" width="150px" height="150px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/7002f9c9-57b5-476e-a904-2b61732f57fb" width="150px" height="150px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/a7aa5b88-7ff7-4bbf-9b3f-2d8667a18dcc" width="150px" height="150px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/c36e4e7f-da00-469d-b76d-a1e7163ac76c" width="150px" height="150px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/a16628c4-0cc1-4348-aed4-8f8ba9d611a0" width="150px" height="150px"/></td>
   </tr>
 </table>
   <br>
@@ -72,7 +72,7 @@
 ### <p id="1-2">1-2. 배경 및 필요성</p>
 #### [ 국내 관광 시장 규모의 성장 ]
 <img src="https://github.com/user-attachments/assets/269e3016-154c-44a1-b4c4-95a7e7520968" width="600px"/> <br>
-코로나19 팬데믹이 종식되고 억눌렸던 여행 수요가 폭발적으로 증가하면서 관광업, 항공업, 숙박업 등 다양한 분야에서 활발한 성장이 이루어지고 있다. 2022년에는 국내 관광 시장 규모는 14조 900억 원으로, 2019년 대비 97% 수준으로 회복되었습니다. 더 나아가 2027년에는 19조 6,900억 원 시장 규모를 형성할 것으로 전망됩니다. 
+코로나19 팬데믹이 종식되고 억눌렸던 여행 수요가 폭발적으로 증가하면서 관광업, 항공업, 숙박업 등 다양한 분야에서 활발한 성장이 이루어지고 있습니다. 2022년에는 국내 관광 시장 규모는 14조 900억 원으로, 2019년 대비 97% 수준으로 회복되었습니다. 더 나아가 2027년에는 19조 6,900억 원 시장 규모를 형성할 것으로 전망됩니다. 
 
 #### [ 국내 여행 플랫폼 시장 규모의 성장 ]  
 <img src="https://github.com/user-attachments/assets/c864aca5-6e03-4bba-b31d-2527b376af7f" width="400px"/> 
@@ -170,8 +170,9 @@
 
 <br><br>
 ## <p id="4">4. 테스트케이스 </p>
-[테스트케이스](https://docs.google.com/spreadsheets/d/1QRd2XA-3SaPd8fHA2NCjy8_Xh_2T9ZUe7HLELneNZ48/edit?usp=sharing)  
-![beebuddy 테스트 케이스](https://github.com/user-attachments/assets/aa9ba96c-eb10-4040-8940-add43f311140)
+[테스트케이스](https://docs.google.com/spreadsheets/d/1g5JGdYRIqlfTwxo8pWvn_RjXfj637lqHXj-BadZo7cY/edit?gid=2127407408#gid=2127407408)  
+![beebuddy 테스트 케이스_1](https://github.com/user-attachments/assets/bfa7993a-c1e4-4ead-bf9b-8839d641a80c)
+![beebuddy 테스트 케이스_2](https://github.com/user-attachments/assets/168d8e56-8dd3-4319-a439-c2772c561e6f)
 
 
 <br><br>
@@ -349,14 +350,14 @@ DELIMITER ;
 → **Permission** to beebuddy1/be15-1st-beebuddy-tripbuddy.git **denied** to hnjee.
 fatal: unable to access 'https://github.com/beebuddy1/be15-1st-beebuddy-tripbuddy.git/': The requested URL returned error: 403
 
-#### 3️⃣ 발생 원인 
-- ##### GitHub Repository에 권한이 잘못 설정되었을 경우 (  repository 권한 부재 OR `Branch protection rules`에 `Require pull request before merging` 옵션 설정 )
-- ##### GitHub 계정 오류
-- ##### <span style="background-color:fff5b1;"> **현재 로컬에 연결된 GitHub 인증 정보 오류**</span>
-- ##### -> GitHub 계정 인증 정보에 조직 정보가 아닌 개인 인증 정보만 존재 
+#### 3️⃣ 발생 원인
+- ##### 케이스1: GitHub Repository에 권한이 잘못 설정되었을 경우 (  repository 권한 부재 OR `Branch protection rules`에 `Require pull request before merging` 옵션 설정 )
+- ##### 케이스2: GitHub 계정 오류
+- ##### <span style="background-color:fff5b1;"> **케이스3: 현재 로컬에 연결된 GitHub 인증 정보 오류 **</span>
+- ##### -> GitHub 계정 인증 정보가 갱신되지 않아서 이전의 권한 정보만 유효함  
 
 #### 4️⃣ 해결 방법 
-##### 1. 기존에 저장된 GitHub 자격증명을 삭제한다. 
+##### 1. 기존에 저장된 GitHub 자격증명을 삭제하고 다시 연결  
 ![permission_error](https://github.com/user-attachments/assets/03200652-9cdd-4904-b218-2b752c02e6be)
 ##### ✔️ 로컬 컴퓨터 윈도우-사용자계정-자격증명 관리자에서  기존의 깃허브와 관련된 자격증명 모두 삭제
 
