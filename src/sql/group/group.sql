@@ -23,8 +23,7 @@ WHERE member_id = @member_id;
 
 -- 그룹이 100개 미만일 때만 INSERT 실행
 
-DELIMITER //
-IF @group_count < 100 THEN
+DELIMITER // IF @group_count < 100 THEN
 INSERT INTO tbl_group(group_name, created_at)
 VALUES (@group_name, DEFAULT);
 
@@ -64,7 +63,6 @@ WHERE group_id = @group_id
        AND gmb.role_id = @role_id) = 1; -- 방장이면 그룹 이름 수정 가능 (member_id 2일 때는 수정 안됨)
 
 -- 4. 그룹 구성원 초대
--- 비즈니스 규칙 체크 필요: TODO (위와 같은 방법으로 그룹 구성원 수를 확인, 100명 미만이면 insert)
 SET @member_id = 100;
 
 
@@ -74,16 +72,15 @@ SET @group_id = 47;
 SET @invitor_id = 3;
 
 
-SELECT COUNT(*)
+INSERT INTO tbl_group_member(group_id, member_id, role_id, invite_accepted)
+SELECT @group_id, @member_id, 2, 'N'
+FROM DUAL
+WHERE (SELECT COUNT(*)
 FROM tbl_member mb
 JOIN tbl_group_member gmb ON mb.member_id = gmb.member_id
 JOIN tbl_group gr ON gmb.group_id = gr.group_id
 WHERE gmb.member_id = @invitor_id
-  AND gmb.group_id = @group_id; -- 초대자가 해당 그룹의 멤버인지 체크
-
-
-INSERT INTO tbl_group_member(group_id, member_id, role_id, invite_accepted)
-VALUES (@group_id, @member_id, 2, 'N'); -- 위의 COUNT(*) 결과가 1일 때 수행
+  AND gmb.group_id = @group_id) = 1; -- 초대자가 해당 그룹 멤버일 때 수행. 즉  COUNT(*) 결과가 1일 때
 
 -- 5. 그룹 초대 수락/거절
 -- 그룹 초대 수락
@@ -132,10 +129,10 @@ WHERE group_id = @group_id
   AND member_id = @succeeder_id;
 
 -- 7. 그룹 삭제
-SET @group_id = 47;
+SET @group_id = 51;
 
 
-SET @member_id = 3;
+SET @member_id = 2;
 
 
 DELETE

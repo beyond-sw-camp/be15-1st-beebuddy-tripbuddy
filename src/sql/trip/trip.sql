@@ -10,17 +10,18 @@ FROM tbl_trip tr
 JOIN tbl_group_member gmb ON gmb.group_id = tr.group_id
 JOIN tbl_member mb ON gmb.member_id = mb.member_id
 WHERE tr.group_id = @group_id
-  AND mb.member_id = @member_id; -- 해당 그룹의 멤버인지 체크(프로시저/함수로?)
+  AND mb.member_id = @member_id;
+-- 해당 그룹의 멤버인지 체크(프로시저/함수로?)
 
 -- 2. 여행방 생성
 
 SET @room_name = '설정한 이름';
 
 
-SET @startdate = '2024-03-27';
+SET @startdate = '2025-03-27';
 
 
-SET @enddate = '2024-03-29';
+SET @enddate = '2025-03-29';
 
 
 SET @group_id = 1;
@@ -28,11 +29,7 @@ SET @group_id = 1;
 
 SET @member_id = 72;
 
-
-SET @cnt = 0;
-
-CALL proc_check_valid_group_member(@group_id, @member_id, @cnt);
-
+CALL proc_checkValidGroupMember(@group_id,@member_id,@room_id,@cnt);
 
 INSERT INTO tbl_trip(room_name, startdate, enddate, group_id)
 SELECT @room_name,
@@ -56,21 +53,16 @@ SET @room_id = 1;
 SET @group_id = 1;
 
 
-SET @cnt = 0;
-
-CALL proc_check_valid_group_member(@group_id, @member_id, @cnt);
-
-
 UPDATE tbl_trip
 SET room_name = @new_name
 WHERE room_id = @room_id
-  AND @cnt=1; -- cnt 2 나와서 수정 안됨. 로직 수정 필요
+  AND @cnt=1;
 
 -- 4. 여행방 날짜 수정
-SET @startdate = '2022-05-30';
+SET @startdate = '2025-05-30';
 
 
-SET @enddate = '2022-06-02';
+SET @enddate = '2025-06-02';
 
 
 SET @room_id = 1;
@@ -84,10 +76,8 @@ SET startdate = @startdate,
     enddate = @enddate
 WHERE room_id = @room_id;
 
--- 그룹 멤버가 맞는지 검증
  -- 5. 여행방 삭제
 SET @room_id = 1;
-
 
 DELETE
 FROM tbl_trip
