@@ -12,12 +12,12 @@
     <td align="center"> <a href="https://github.com/dxmlk">한성경</a></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/user-attachments/assets/c5ea1f98-b4c1-4d4a-a221-602fae97db86" width="150px" height="130px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/82943f25-208e-4ab7-9245-6ffe9662cea2" width="150px" height="130px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/cb0ba9a4-c19b-4ce7-ac6e-8f8df777d121" width="150px" height="130px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/a7aa5b88-7ff7-4bbf-9b3f-2d8667a18dcc" width="150px" height="130px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/c36e4e7f-da00-469d-b76d-a1e7163ac76c" width="150px" height="130px"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/a16628c4-0cc1-4348-aed4-8f8ba9d611a0" width="150px" height="130px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/c5ea1f98-b4c1-4d4a-a221-602fae97db86" width="150px" height="120px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/82943f25-208e-4ab7-9245-6ffe9662cea2" width="150px" height="120px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/cb0ba9a4-c19b-4ce7-ac6e-8f8df777d121" width="150px" height="120px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/a7aa5b88-7ff7-4bbf-9b3f-2d8667a18dcc" width="150px" height="120px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/c36e4e7f-da00-469d-b76d-a1e7163ac76c" width="150px" height="120px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/a16628c4-0cc1-4348-aed4-8f8ba9d611a0" width="150px" height="120px"/></td>
   </tr>
 </table>
   <br>
@@ -311,7 +311,7 @@ DELIMITER ;
 - `DELETE` 옵션은 추가 데이터가 없어 `NEW` 사용 불가
 
 #### 4️⃣ 해결 방법 
-##### 1.  `NEW`를 제외하 작성한다.
+##### 1.  `NEW`를 제외하고 작성한다.
 ``` sql
 DELIMITER ;
 -- 비용 삭제 트리거
