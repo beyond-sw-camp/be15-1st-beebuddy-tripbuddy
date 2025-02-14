@@ -136,12 +136,9 @@
 ### <p id="1-6">1-6. UML</p>
 <details>
 <summary>UML</summary>
-<div markdown="1">
-  <img src="https://github.com/user-attachments/assets/20d39e15-95e3-4734-9d13-e92b41ec5810"/>
-</div>
+  ![tripbuddy_usecase](https://github.com/user-attachments/assets/d586a9a4-25ba-422a-8629-2f468a7b322c)
 </details>
 <br><br>
-
 
 ## <p id="2">2. DB모델링</p>
 
