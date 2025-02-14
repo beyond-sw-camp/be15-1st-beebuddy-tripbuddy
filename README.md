@@ -181,7 +181,7 @@
 ## <p id="5">5. 기술 스택 </p>
 <div dir="auto">
 <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white">
-<img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=white">
+<img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
 <img src="https://img.shields.io/badge/vscode-000000?style=for-the-badge&logo=vsco&logoColor=white">
 <img src="https://img.shields.io/badge/Sourcetree-0052CC?style=for-the-badge&logo=sourcetree&logoColor=white">
 <img src="https://img.shields.io/badge/HeidiSQL-25D366?style=for-the-badge&logoColor=white">
@@ -461,6 +461,6 @@ DEALLOCATE PREPARE stmt;
 
 
 
-## <p id="7">7. 회고록</p>
+## <p id="7">7. 팀원 회고</p>
 
 
