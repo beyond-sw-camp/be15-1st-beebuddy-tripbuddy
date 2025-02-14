@@ -12,7 +12,7 @@
     <td align="center"> <a href="https://github.com/dxmlk">한성경</a></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/user-attachments/assets/c5ea1f98-b4c1-4d4a-a221-602fae97db86" width="150px" height="130px"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/6d90b398-ee24-4c91-806c-36c35d6c4a31" width="150px" height="130px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/82943f25-208e-4ab7-9245-6ffe9662cea2" width="150px" height="130px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/cb0ba9a4-c19b-4ce7-ac6e-8f8df777d121" width="150px" height="130px"/></td>
     <td align="center"><img src="https://github.com/user-attachments/assets/a7aa5b88-7ff7-4bbf-9b3f-2d8667a18dcc" width="150px" height="130px"/></td>
@@ -25,7 +25,7 @@
 
 ## 🧳 트립버디 개요
 
-<a href="#1">1. 프로젝트 기획</a>
+📑 <a href="#1">1. 프로젝트 기획</a>
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-1">1-1. 주제</a>
 
@@ -39,30 +39,30 @@
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-6">1-6. UML(Usecase Diagram)</a>
 
-<a href="#2">2. DB 모델링</a>
+🗃️ <a href="#2">2. DB 모델링</a>
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-1">2-1. 논리 모델링</a>
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-2">2-2. 물리 모델링</a>
 
-<a href="#3">3. 서버 구축 </a>
+🛠️ <a href="#3">3. 서버 구축 </a>
 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-1">3-1. 리플리케이션(Replication) </a>
 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-2">3-2. DDL </a>
 
-<a href="#4">4. 테스트케이스 </a>
+🗒️ <a href="#4">4. 테스트케이스 </a>
 
-<a href="#5">5. 기술 스택 </a>
+👾 <a href="#5">5. 기술 스택 </a>
 
-<a href="#6">6. 트러블슈팅 </a>
+🐞 <a href="#6">6. 트러블슈팅 </a>
 
-<a href="#7">7. 팀원 회고 </a>
+🧑‍💻 <a href="#7">7. 팀원 회고 </a>
 
 <br>
 
 
-## <p id="1">1. 프로젝트 기획</p>
+## <p id="1"> 📑 1. 프로젝트 기획</p>
 
 
 ### <p id="1-1">1-1. 주제</p>
@@ -142,7 +142,7 @@
 </details>
 <br><br>
 
-## <p id="2">2. DB모델링</p>
+##  <p id="2"> 🗃️ 2. DB모델링</p>
 
 
 ### <p id="2-1">2-1. 논리 모델링</p>
@@ -153,7 +153,7 @@
 ![물리 모델](https://github.com/user-attachments/assets/680993b9-5395-4080-9988-1883ee5269c3)
 
 <br><br>
-## <p id="3">3. 서버 구축</p>
+##  <p id="3"> 🛠️ 3. 서버 구축</p>
 ### <p id="3-1">3-1. MariaDB 리플리케이션</p>
 ![레플리케이션](https://github.com/user-attachments/assets/a25a4ee2-7125-4b71-b017-ce93bad93e30)
 - DB 서버의 부하를 분산시키고 데이터를 백업하기 위해 Master-Slave 구조로 DB서버 구축 진행
@@ -169,7 +169,7 @@
 [DDL](https://github.com/beebuddy1/be15-1st-beebuddy-tripbuddy/blob/a1ba4df29c8ee8648c906ceb246ab0a3a9b5330f/src/ddl/ddl.sql)
 
 <br><br>
-## <p id="4">4. 테스트케이스 </p>
+## <p id="4"> 🗒️ 4. 테스트케이스 </p>
 [테스트케이스](https://docs.google.com/spreadsheets/d/1g5JGdYRIqlfTwxo8pWvn_RjXfj637lqHXj-BadZo7cY/edit?gid=2127407408#gid=2127407408)  
 
 ![beebuddy 테스트 케이스_1](https://github.com/user-attachments/assets/3be5a832-6ebc-435e-a2f5-ec61ec8f4dad)
@@ -177,7 +177,7 @@
 
 
 <br><br>
-## <p id="5">5. 기술 스택 </p>
+## <p id="5"> 👾 5. 기술 스택 </p>
 <div dir="auto">
 <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white">
 <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
@@ -195,7 +195,7 @@
 
 <br><br>
 
-## <p id="6">6. 트러블슈팅</p>
+##  <p id="6"> 🐞 6. 트러블슈팅</p>
 
 ### 6-1. PK 지정 전 AUTO_INCREMENT Error
 #### 1️⃣ 에러 발생 코드
@@ -459,6 +459,13 @@ DEALLOCATE PREPARE stmt;
 
 
 
-## <p id="7">7. 팀원 회고</p>
-
+##  <p id="7"> 🧑‍💻 7. 팀원 회고</p>
+| 이름 | 내용 |
+| --- | --- |
+| 곽진웅 | 처음으로 해보는 개발 프로젝트라 어떻게 해야 할 지 막막하기도 하고 어려움이 많았는데 좋은 팀원들 만난 덕분에 많이 배우며 무사히 마무리할 수 있었습니다. 그럴 수 없는 거 알지만 팀 매칭 이후 며칠 지내보고 이 팀으로 6개월 쭉 갔으면 좋겠다고 생각했는데, 프로젝트 진행해보니 역시 제 예감이 틀리지 않았네요. 부트캠프 일정 소화하기도 쉽지 않은데 수업 끝나고 남아서 프로젝트 준비하느라 다들 고생 많았습니다. 좋은 개발자로 성장해있을 팀원들의 모습이 기대가 됩니다. |
+| 김소원 | 처음 팀을 꾸릴 때 많이 긴장했었는데, 좋은 팀원들의 선택으로 프로젝트 여정의 시작부터 마무리까지 즐겁게 해낼 수 있었습니다.  데이터베이스 구축을 목표로 하는 프로젝트는 처음이었는데,  구체적인 프론트 목업 없이 작업하는 것이 쉽지 않은 일이라고 생각했습니다. 기획 단계를 거치면서 초기에 구상했던 기능의 일부는 구현하지 못한 아쉬움이 남습니다. 하지만 프로젝트를 진행하며 어려운 부분을 서로 미루지 않는 모습에 팀원들 모두가 우리가 설계한 플랫폼의 목적인 ‘협업’이라는 단어에 어울리는 사람이라고 생각했습니다. 팀원들 모두에게 이번 프로젝트가 개발자로서 앞으로 나아갈 수 있는 힘이 되었으면 좋겠습니다. |
+| 오유경 | 데이터베이스 구축을 이렇게 오랫동안, 꼼꼼하게 한 적이 처음이라 구체적으로 들어갈 수록 조금 어려울 때도 있었지만, 좋은 팀원들을 만나 서로 도움을 주고 받으면서 잘 해결해 나아갔던 것 같습니다. 특히, 데이터 정규화 과정에서 중복을 최소화하고 효율적인 쿼리를 작성하는 방법을 고민하면서 많은 것을 배울 수 있었습니다. 또한, 예상하지 못했던 문제들이 발생했을 때, 팀원들과 함께 원인을 분석하고 해결책을 모색하는 과정에서 협업의 중요성을 다시 한번 실감했습니다. 이번 프로젝트를 통해 단순히 데이터베이스를 구축하는 것뿐만 아니라, 유지보수와 확장성을 고려한 설계를 하는 것이 얼마나 중요한지 깨달았습니다. 앞으로도 이런 경험들을 통해 좋은 개발자가 되고 싶습니다. |
+| 이현지 | 이번 프로젝트를 통해 기획부터 DB구축, SQL문 쿼리 작성, 테스트, 산출물 문서화 작업 모두 빠르게 경험해볼 수 있었습니다. 데이터베이스 모델링을 개념으로만 접해 막연하다고 느끼던 차에, 팀원들과 정규화 및 유지보수, 확장성 측면까지 고려하며 실제 DB를 설계를 해볼 수 있어 좋았습니다. 한정된 시간이라 최적화적인 측면까지 고민하지 못한 것이 아쉽지만 다음에는 WBS를 좀더 활용하여 우선순위 관리를 잘해야겠다고 생각했습니다. 저에게 가장 즐거웠던 것은 팀원 모두가 부끄러움이나 두려움 없이 자신의 생각을 자유롭게 이야기하고 이를 조율해나간 과정들입니다. 결과 자체도 중요하지만 현재는 배우는 입장이기 때문에 열린 마음으로 해결 방안을 토의해보는 것이 중요하다고 생각하는데, 이러한 과정을 함께할 수 있는 좋은 팀원들을 만난 것이 다행이라고 생각했습니다.   |
+| 조현승 | 프로젝트를 진행하면서 처음부터 데이터베이스 설계를 경험할 수 있어 좋은 기회였습니다. 단순히 학습하는 것에 그치지 않고, 프로시저와 트리거를 실제로 적용해 보면서 데이터베이스의 다양한 기능을 활용하는 법을 익힐 수 있었습니다. 다만, 댓글과 그룹원 조회 등에 대한 인덱싱을 적용하지 못한 점은 아쉬움으로 남습니다. 데이터 최적화 측면에서 더 깊이 고민해볼 필요가 있다고 느꼈습니다. 팀원들이 각자의 역할을 맡아 열심히 노력해 주었고, 함께 협력하며 프로젝트를 진행한 덕분에 많은 것을 배울 수 있었습니다. |
+| 한성경 | 단순하고 간결한 모델과 단순하진 않지만 가독성이 좋은 모델 중 어떤 것이 좋은 모델인지, 특정 컬럼에 여러 데이터 타입이 허용될 때 어떤 타입을 선택해야 하는지 등 작업의 우선순위에 따라 최적의 선택이 바뀔 수 있는 요소들을 다함께 고려하는 과정이 좋았습니다.  또한 WBS로 작업 설계, 요구사항 명세서로 서비스 구체화, UML로 시스템의 동작 설계, 데이터베이스모델링과 서버 구축으로 실질적인 데이터 구현 등 안정적이고 체계적인 서비스 운영 사이클을 겪을 수 있었습니다.  기존에는 추상적이었던 데이터베이스라는 개념이, 소프트웨어에서 어떤 역할을 수행하고 어떤 영향을 미치는지 직접 경험할 수 있었습니다. |
 
